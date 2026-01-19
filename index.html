@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Echelon Wellness Solutions - Supporting the Future of Wellness</title>
-  <script defer src="https://cdn.vercel-analytics.com/v1/script.js"></script>
-<style>
+  <style>
     :root{
       --navy:#0a2463;
       --navy2:#1e4d8b;
@@ -484,3 +483,690 @@
       border-radius: 12px;
       margin: 1rem 0 1.1rem;
       text-align:center;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    .product-card p{
+      color:#4b5563;
+      line-height:1.85;
+      margin-bottom: 1.1rem;
+      font-size: 1.02rem;
+    }
+    .product-card h4{
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin: 1.1rem 0 0.7rem;
+      border-bottom: 2px solid rgba(94,179,228,0.55);
+      padding-bottom: 0.4rem;
+      display:inline-block;
+    }
+    .product-card ul{
+      margin-left: 1.2rem;
+      color:#4b5563;
+      line-height:1.85;
+    }
+    .product-card li{ margin-bottom: 0.55rem; }
+
+    /* Vet PDF panel */
+    .pdf-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .pdf-card{
+      background:#fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow2);
+      border: 1px solid rgba(10,36,99,0.06);
+      overflow:hidden;
+    }
+    .pdf-card .pdf-head{
+      padding: 1.15rem 1.2rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 1rem;
+      background: linear-gradient(135deg, rgba(10,36,99,0.06) 0%, rgba(94,179,228,0.10) 100%);
+    }
+    .pdf-card .pdf-head h3{
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 0;
+      font-weight: 900;
+    }
+    .pdf-actions{
+      display:flex;
+      gap: 0.6rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pdf-actions a{
+      font-size: 0.92rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 900;
+      border: 1px solid rgba(10,36,99,0.12);
+      color: var(--navy);
+      background:#fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .pdf-actions a:hover{
+      transform: translateY(-2px);
+      background: #f3f4f6;
+    }
+    .pdf-frame{
+      width: 100%;
+      height: 520px;
+      border: 0;
+      display:block;
+      background:#fff;
+    }
+
+    /* Contact section */
+    .contact-section{
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color:#fff;
+      padding: 90px 1.5rem;
+      text-align:center;
+    }
+    .contact-section h2{ color:#fff; }
+    .contact-info{
+      display:flex;
+      justify-content:center;
+      gap: 3rem;
+      margin-top: 2.4rem;
+      flex-wrap:wrap;
+    }
+    .contact-item{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap: 0.65rem;
+      padding: 1.4rem 1.2rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      min-width: 280px;
+    }
+    .contact-item a{
+      color: var(--sky);
+      text-decoration:none;
+      font-size: 1.15rem;
+      transition: color 0.25s;
+      font-weight: 900;
+    }
+    .contact-item a:hover{ color:#fff; }
+    .contact-icon{ font-size: 2.2rem; color: var(--sky); }
+
+    footer{
+      background: var(--navy);
+      color:#fff;
+      text-align:center;
+      padding: 2.2rem 1.5rem;
+    }
+    .footer-social{ margin: 1.2rem 0; }
+    .footer-social a{
+      color: var(--sky);
+      font-size: 1.6rem;
+      margin: 0 0.75rem;
+      transition: color 0.25s;
+      text-decoration:none;
+    }
+    .footer-social a:hover{ color:#fff; }
+
+    /* Responsive */
+    @media (max-width: 1100px){
+      .pathways{ grid-template-columns: 1fr; }
+      .features{ grid-template-columns: 1fr; }
+      .pdf-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px){
+      .hero h1{ font-size: 2.4rem; }
+      .hero .tagline{ font-size: 1.35rem; }
+      .page-hero h1{ font-size: 2.3rem; }
+      .logo-container img{ height: 46px; }
+      .brand-mini{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav>
+    <div class="logo-container" onclick="showPage('home')">
+      <img src="https://i.ibb.co/GCqwH7G/echelon-logo.png" alt="Echelon Wellness Solutions" />
+      <div class="brand-mini">
+        <div class="name">Echelon Wellness Solutions</div>
+        <div class="tag">Supporting the Future of Wellness</div>
+      </div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a id="link-home" onclick="showPage('home')">Home</a></li>
+      <li><a id="link-regenerative" onclick="showPage('regenerative')">Regenerative Medicine</a></li>
+      <li><a id="link-aesthetic" onclick="showPage('aesthetic')">Aesthetic Solutions</a></li>
+      <li><a id="link-veterinary" onclick="showPage('veterinary')">Veterinary (Spring 2026)</a></li>
+      <li><a id="link-about" onclick="showPage('about')">About</a></li>
+      <li><a id="link-contact" onclick="showPage('contact')">Contact</a></li>
+
+      <div class="social-icons">
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="LinkedIn">💼</a>
+        <a href="#" title="Instagram">📷</a>
+      </div>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Supporting the Future of Wellness</h1>
+      <p class="tagline">Advanced Regenerative Medicine • Aesthetic Solutions • Veterinary Innovation</p>
+      <p>
+        Echelon Wellness Solutions partners with clinics, med spas, and providers to bring forward-thinking
+        regenerative and aesthetic solutions—backed by education, protocols, and hands-on support.
+      </p>
+      <div class="cta-buttons">
+        <a onclick="showPage('contact')" class="btn btn-primary">Schedule a Consultation</a>
+        <a onclick="showPage('regenerative')" class="btn btn-secondary">Explore Our Solutions</a>
+        <a onclick="showPage('veterinary')" class="btn btn-ghost">Veterinary (Spring 2026)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Your Solutions, Organized by Pathway</h2>
+    <p class="subtitle">
+      The Home page stays high-level on purpose—product details live on each dedicated page so your site feels clean,
+      modern, and easy to navigate.
+    </p>
+
+    <div class="pathways">
+      <div class="path-card" onclick="showPage('regenerative')">
+        <div class="path-top grad-reg">
+          <div>
+            <div class="path-title">Regenerative Medicine</div>
+            <div class="path-sub">Pain management • Ortho • Tissue support</div>
+          </div>
+          <div class="path-icon">🏥</div>
+        </div>
+        <div class="path-body">
+          <p>
+            Solutions designed to support inflammation modulation, tissue repair pathways, and recovery protocols—
+            positioned for modern regenerative practices.
+          </p>
+          <div class="path-chiprow">
+            <span class="chip">Protocols</span>
+            <span class="chip">Training</span>
+            <span class="chip">Clinic Support</span>
+          </div>
+          <div class="path-cta">
+            <span>Explore Regenerative</span>
+            <div class="arrow">➜</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="path-card" onclick="showPage('aesthetic')">
+        <div class="path-top grad-aes">
+          <div>
+            <div class="path-title">Aesthetic Solutions</div>
+            <div class="path-sub">Procedure enhancement • Skin health • Recovery</div>
+          </div>
+          <div class="path-icon">✨</div>
+        </div>
+        <div class="path-body">
+          <p>
+            Elevated aesthetic offerings for med spas and wellness clinics—designed to complement popular procedures
+            and support post-treatment recovery.
+          </p>
+          <div class="path-chiprow">
+            <span class="chip">Microneedling</span>
+            <span class="chip">Skin</span>
+            <span class="chip">Scalp</span>
+          </div>
+          <div class="path-cta">
+            <span>Explore Aesthetics</span>
+            <div class="arrow">➜</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="path-card" onclick="showPage('veterinary')">
+        <div class="path-top grad-vet">
+          <div>
+            <div class="path-title">Veterinary</div>
+            <div class="path-sub">Coming Spring 2026 • Canine + Equine</div>
+          </div>
+          <div class="path-icon">🐾</div>
+        </div>
+        <div class="path-body">
+          <p>
+            A dedicated veterinary initiative focused on clinician-friendly, scalable regenerative education and
+            product positioning—launching Spring 2026.
+          </p>
+          <div class="path-chiprow">
+            <span class="chip">Clinician Overview</span>
+            <span class="chip">Canine</span>
+            <span class="chip">Equine</span>
+          </div>
+          <div class="path-cta">
+            <span>View Veterinary Page</span>
+            <div class="arrow">➜</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <h2>Why Echelon?</h2>
+    <p class="subtitle">A partner that supports implementation—not just product selection.</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">🏆</div>
+        <h3>Authorized Representation</h3>
+        <p>Manufacturer-aligned education and support—built for real-world clinic operations.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🔬</div>
+        <h3>Science + Practicality</h3>
+        <p>Clear clinician messaging, protocols, and use-case positioning that patients understand.</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🤝</div>
+        <h3>Full Support</h3>
+        <p>Training, onboarding, and ongoing practice growth support to help you scale confidently.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Ready to Build Your Next Offering?</h2>
+    <p style="font-size:1.2rem; margin:1.2rem auto 2rem; max-width: 900px; color: rgba(255,255,255,0.92);">
+      Schedule a quick consult and we’ll map the right pathway (regenerative, aesthetic, or veterinary) for your practice.
+    </p>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Email</div>
+        <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Phone</div>
+        <a href="tel:864-381-0808">864-381-0808</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.2rem;">
+      <a onclick="showPage('contact')" class="btn btn-primary" style="font-size:1.15rem; padding: 1.1rem 2.6rem;">Schedule Your Consultation</a>
+    </div>
+  </section>
+</div>
+
+<!-- REGENERATIVE -->
+<div id="regenerative" class="page">
+  <section class="page-hero">
+    <h1>Regenerative Medicine</h1>
+    <p>
+      Advanced regenerative offerings for pain management, orthopedic care, and tissue support—paired with training,
+      protocols, and practice implementation support.
+    </p>
+    <div class="mini-cta">
+      <a onclick="showPage('contact')" class="btn btn-primary">Talk With Us</a>
+      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="visual-banner banner-reg">🏥 Advanced Pain Management & Tissue Support</div>
+
+    <!-- Product detail stays HERE (not on Home) -->
+    <div class="product-card">
+      <h3>Nano Flow</h3>
+      <p class="product-subtitle">Umbilical Cord-Derived MSC Growth Factor Formula</p>
+      <div class="product-highlight">40 Million MSC Growth Factors</div>
+      <p>
+        A biologically active, tissue-free growth factor media designed to support collagen-based healing and cellular-level regeneration.
+      </p>
+      <h4>Clinical Applications</h4>
+      <ul>
+        <li>Joint pain and inflammation</li>
+        <li>Cartilage defects and osteoarthritis</li>
+        <li>Tissue repair and recovery protocols</li>
+        <li>Sports medicine use cases</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Nano Flex</h3>
+      <p class="product-subtitle">Concentrated Wharton’s Jelly Allograft</p>
+      <div class="product-highlight">150mg & 300mg Concentrations Available</div>
+      <p>
+        A high-concentration Wharton’s Jelly option rich in extracellular matrix components and biologically active factors.
+      </p>
+      <h4>Ideal For</h4>
+      <ul>
+        <li>Orthopedic and sports medicine practices</li>
+        <li>Pain management physicians</li>
+        <li>Regenerative medicine clinics</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Nano PRP Jelly</h3>
+      <p class="product-subtitle">Practical PRP Alternative</p>
+      <div class="product-highlight">Practically Painless • Designed for Clinic Workflow</div>
+      <p>
+        Collagen-based mesenchymal connective tissue positioning intended as a practical alternative where PRP has historically been used.
+      </p>
+      <h4>Common Use Cases</h4>
+      <ul>
+        <li>Joint injections</li>
+        <li>Cosmetic procedure support</li>
+        <li>Scalp protocols</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Nano Xsomes</h3>
+      <p class="product-subtitle">Cord Blood (Plasma)-Derived Exosome</p>
+      <div class="product-highlight">Regenerative Signaling • Clinician-Friendly Positioning</div>
+      <p>
+        Exosome-focused option positioned for a wide range of regenerative applications, emphasizing potency and characterization.
+      </p>
+      <h4>Common Considerations</h4>
+      <ul>
+        <li>Regenerative signaling support</li>
+        <li>Recovery and tissue support positioning</li>
+        <li>Integration with clinic protocols</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center; margin-top: 2.2rem;">
+      <a onclick="showPage('contact')" class="btn btn-primary">Request Pricing / Ordering Support</a>
+    </div>
+  </section>
+</div>
+
+<!-- AESTHETIC -->
+<div id="aesthetic" class="page">
+  <section class="page-hero">
+    <h1>Aesthetic Solutions</h1>
+    <p>
+      Elevated options designed to complement aesthetic procedures and skin/scalp protocols—paired with education,
+      marketing support, and clinician-ready positioning.
+    </p>
+    <div class="mini-cta">
+      <a onclick="showPage('contact')" class="btn btn-primary">Talk With Us</a>
+      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="visual-banner banner-aes">✨ Skin • Scalp • Post-Procedure Support</div>
+
+    <div class="product-card">
+      <h3>NanoEX</h3>
+      <p class="product-subtitle">Bioengineered Skin Health Positioning</p>
+      <div class="product-highlight">Designed to Complement Cosmetic Protocols</div>
+      <p>
+        Aesthetic-focused positioning around post-treatment recovery support, skin/scalp protocols, and daily regimen integration.
+      </p>
+      <h4>Common Med Spa Use Cases</h4>
+      <ul>
+        <li>Microneedling enhancement protocols</li>
+        <li>Post-treatment recovery positioning</li>
+        <li>Skin + scalp support offerings</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <h3>Nano AER</h3>
+      <p class="product-subtitle">Lyophilized Exosome Positioning</p>
+      <div class="product-highlight">Shelf-Stable • Designed for Application Flexibility</div>
+      <p>
+        A shelf-stable option positioned for aesthetic protocol integration with flexibility across patient needs.
+      </p>
+      <h4>Program Integration</h4>
+      <ul>
+        <li>Procedure add-on positioning</li>
+        <li>Membership / package upsell options</li>
+        <li>Clinician education and patient-facing messaging</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center; margin-top: 2.2rem;">
+      <a onclick="showPage('contact')" class="btn btn-primary">Build an Aesthetic Protocol</a>
+    </div>
+  </section>
+</div>
+
+<!-- VETERINARY -->
+<div id="veterinary" class="page">
+  <section class="page-hero">
+    <h1>Veterinary</h1>
+    <p>
+      Coming <strong>Spring 2026</strong>: A dedicated veterinary initiative focused on clinician-friendly regenerative education and scalable offerings
+      for <strong>canine + equine</strong> practices.
+    </p>
+    <div class="mini-cta">
+      <a onclick="showPage('contact')" class="btn btn-primary">Join the Interest List</a>
+      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="visual-banner banner-vet">🐾 Veterinary Innovation • Clinician-Ready • Spring 2026</div>
+
+    <h2>Clinician Overview</h2>
+    <p class="subtitle">
+      This page summarizes the clinician story and includes the one-page PDFs you can share with veterinarians.
+    </p>
+
+    <div class="product-card" style="border-top-color: #10b981;">
+      <h3>What Are “Cell Factors”?</h3>
+      <p class="product-subtitle">Cell Secretome / Acellular Biologics</p>
+      <p>
+        Cell Factors refer to bioactive signaling molecules secreted by cells—commonly including growth factors, cytokines, peptides,
+        and extracellular vesicles (EVs/exosomes). The clinical story emphasizes that many benefits associated with stem cell therapies
+        are driven by signaling (not cell engraftment).
+      </p>
+
+      <h4>Why Medicine Is Moving Cell-Free</h4>
+      <ul>
+        <li>More consistent dosing and outcomes</li>
+        <li>Easier storage and administration</li>
+        <li>Clinic-friendly scalability and workflow</li>
+        <li>Reduced complexity associated with live-cell handling</li>
+      </ul>
+
+      <h4>Veterinary Translation</h4>
+      <ul>
+        <li>Shared regenerative signaling pathways across mammalian species</li>
+        <li>Fits joint, tendon/ligament, wound, airway, and recovery use-case education</li>
+        <li>Strong client education story: “advanced regenerative signaling—without stem cells”</li>
+      </ul>
+
+      <div class="product-highlight" style="background: linear-gradient(135deg, #10b981 0%, #0a2463 100%);">
+        Launch Target: Spring 2026 • Canine + Equine Focus
+      </div>
+    </div>
+
+    <h2 style="margin-top: 3.2rem;">Shareable PDFs</h2>
+    <p class="subtitle">
+      Place these PDF files in the same folder as this HTML file (or update the links to where you host them).
+    </p>
+
+    <div class="pdf-grid">
+      <div class="pdf-card">
+        <div class="pdf-head">
+          <h3>Human Cell Factors — Veterinary Overview (PDF)</h3>
+          <div class="pdf-actions">
+            <a href="Human_Cell_Factors_Veterinary_Overview.pdf" target="_blank" rel="noopener">Open</a>
+            <a href="Human_Cell_Factors_Veterinary_Overview.pdf" download>Download</a>
+          </div>
+        </div>
+        <iframe class="pdf-frame" src="Human_Cell_Factors_Veterinary_Overview.pdf"></iframe>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-head">
+          <h3>One-Page Clinician Summary (PDF)</h3>
+          <div class="pdf-actions">
+            <a href="ONE-PAGE CLINICIAN SUMMARY.pdf" target="_blank" rel="noopener">Open</a>
+            <a href="ONE-PAGE CLINICIAN SUMMARY.pdf" download>Download</a>
+          </div>
+        </div>
+        <iframe class="pdf-frame" src="ONE-PAGE CLINICIAN SUMMARY.pdf"></iframe>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 2.2rem;">
+      <a onclick="showPage('contact')" class="btn btn-primary">Request Vet Launch Details</a>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <section class="page-hero">
+    <h1>About Echelon</h1>
+    <p>
+      Echelon Wellness Solutions supports providers with modern regenerative and aesthetic solutions—plus education,
+      protocols, and implementation support that fits real clinic workflows.
+    </p>
+    <div class="mini-cta">
+      <a onclick="showPage('contact')" class="btn btn-primary">Work With Us</a>
+      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="product-card">
+      <h3>Our Mission</h3>
+      <p>
+        To help clinics and med spas confidently adopt advanced wellness solutions with clear protocols, clinician education,
+        and patient-friendly messaging—so your team can implement and scale with consistency.
+      </p>
+
+      <h4>What You Can Expect</h4>
+      <ul>
+        <li>Education + onboarding support</li>
+        <li>Protocol guidance and positioning</li>
+        <li>Practice growth enablement</li>
+        <li>Clear pathways: Regenerative • Aesthetic • Veterinary (Spring 2026)</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <section class="page-hero">
+    <h1>Contact</h1>
+    <p>
+      Let’s talk through your goals and map the right pathway for your practice.
+    </p>
+    <div class="mini-cta">
+      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="product-card">
+      <h3>Schedule a Consultation</h3>
+      <p class="product-subtitle">Regenerative • Aesthetic • Veterinary (Spring 2026)</p>
+      <p>
+        Email or call anytime. If you share your practice type and top priorities, we’ll come prepared with
+        recommendations and next steps.
+      </p>
+
+      <h4>Contact</h4>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:864-381-0808">864-381-0808</a></li>
+      </ul>
+
+      <div style="margin-top: 1.4rem;">
+        <a href="mailto:maryanne@echelonwellnesssolutions.com?subject=Echelon%20Consultation%20Request" class="btn btn-primary">
+          Email to Schedule
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>We’ll Support You End-to-End</h2>
+    <p style="font-size:1.2rem; margin:1.1rem auto 2rem; max-width: 900px; color: rgba(255,255,255,0.92);">
+      Product education, protocols, team training, and implementation support—built for clinic reality.
+    </p>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Email</div>
+        <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Phone</div>
+        <a href="tel:864-381-0808">864-381-0808</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-social">
+    <a href="#" title="Facebook">📘</a>
+    <a href="#" title="LinkedIn">💼</a>
+    <a href="#" title="Instagram">📷</a>
+  </div>
+  <div style="opacity:0.9;">© <span id="year"></span> Echelon Wellness Solutions • Supporting the Future of Wellness</div>
+</footer>
+
+<script>
+  function showPage(pageId){
+    // Toggle pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const page = document.getElementById(pageId);
+    if(page) page.classList.add('active');
+
+    // Toggle active nav link
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
+    const link = document.getElementById('link-' + pageId);
+    if(link) link.classList.add('active-link');
+
+    // Update hash + scroll
+    window.location.hash = pageId;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // On load: open hash if present
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const initial = window.location.hash ? window.location.hash.replace('#','') : 'home';
+    showPage(initial);
+  });
+
+  // Handle back/forward
+  window.addEventListener('hashchange', () => {
+    const pageId = window.location.hash.replace('#','') || 'home';
+    showPage(pageId);
+  });
+</script>
+</body>
+</html>

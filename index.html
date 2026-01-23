@@ -1,1180 +1,1189 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Echelon Wellness Solutions - Supporting the Future of Wellness</title>
-  <style>
-    :root{
-      --navy:#0a2463;
-      --navy2:#1e4d8b;
-      --sky:#5eb3e4;
-      --ink:#111827;
-      --muted:#6b7280;
-      --bg:#ffffff;
-      --soft:#f7f9fc;
-      --card:#ffffff;
-      --shadow: 0 18px 50px rgba(0,0,0,0.10);
-      --shadow2: 0 10px 30px rgba(0,0,0,0.10);
-      --radius: 18px;
-    }
+import Head from 'next/head';
+import Link from 'next/link';
+import { Check, ChevronRight } from 'lucide-react';
 
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    body{
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height:1.6;
-      color:#333;
-      background: var(--bg);
-    }
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Echelon Wellness Solutions | Regenerative Medicine for Healthcare Providers</title>
+        <meta name="description" content="Transform your practice with evidence-based regenerative medicine. Add $12,000+ monthly revenue through proven pain management and aesthetic protocols." />
+      </Head>
 
-    /* Pages */
-    .page{ display:none; }
-    .page.active{ display:block; }
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                Transform Your Practice with Revenue-Generating Regenerative Medicine
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Help medical professionals add $12,000+ in monthly revenue through proven regenerative protocols for pain management and aesthetic applications—a viable, non-surgical option that works without the overhead of traditional PRP systems.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/consultation"
+                  className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
+                >
+                  Schedule Your Free Consultation
+                </Link>
+                <Link
+                  href="/solutions"
+                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
+                >
+                  Learn How It Works
+                </Link>
+              </div>
+            </div>
+            <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+              <span className="text-gray-400">Hero Image: Add to /public/images/hero.jpg</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    /* Header */
-    header{
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      color:#fff;
-      padding: 0.85rem 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.14);
-    }
+      {/* The Challenge */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            The Reality of Modern Medical Practice
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            {[
+              { label: 'Declining Reimbursements', icon: '↓' },
+              { label: 'Rising Overhead', icon: '↑' },
+              { label: 'Increasing Competition', icon: '↑' },
+              { label: 'Growing Patient Demand', icon: '↑' }
+            ].map((item, idx) => (
+              <div key={idx} className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl mb-2">{item.icon}</div>
+                <div className="font-semibold text-gray-700">{item.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto text-center">
+            You already know the challenges: declining insurance reimbursements, rising overhead costs, and increasing competition from non-physician providers. Meanwhile, patients are actively seeking regenerative solutions—particularly non-surgical options to try before committing to surgery.
+          </p>
+        </div>
+      </section>
 
-    nav{
-      max-width: 1400px;
-      margin: 0 auto;
-      display:flex;
-      justify-content: space-between;
-      align-items:center;
-      padding: 0 1.5rem;
-      gap: 1rem;
-    }
+      {/* The Solution */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            A Smarter Path Forward: Allogeneic Biologics
+          </h2>
+          <p className="text-lg text-gray-600 mb-12 max-w-4xl">
+            Echelon Wellness Solutions specializes in helping medical practices integrate compliant, evidence-based regenerative medicine using umbilical cord-derived biologics—including Wharton's Jelly and exosomes.
+          </p>
 
-    .logo-container{
-      display:flex;
-      align-items:center;
-      gap: 0.85rem;
-      cursor:pointer;
-      user-select:none;
-    }
-    .logo-container img{
-      height: 52px;
-      width:auto;
-    }
-    .brand-mini{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand-mini .name{
-      font-weight:700;
-      letter-spacing:0.2px;
-      font-size: 1.05rem;
-    }
-    .brand-mini .tag{
-      font-size:0.85rem;
-      color: rgba(255,255,255,0.82);
-    }
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Pain Management */}
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Pain Management Applications</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Joint-based cartilage defects (shoulder, knee, hip, ankle)</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Plantar fasciosis and Achilles tendinosis</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Spinal and paraspinal applications</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Neuropraxic deficits (localized nerve support)</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Non-surgical alternative before considering surgery</span>
+                </li>
+              </ul>
+            </div>
 
-    .nav-links{
-      display:flex;
-      list-style:none;
-      gap: 1.2rem;
-      align-items:center;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-    }
-    .nav-links a{
-      color:#fff;
-      text-decoration:none;
-      transition: color 0.25s, transform 0.25s;
-      font-size: 0.95rem;
-      cursor:pointer;
-      padding: 0.35rem 0.2rem;
-      border-radius: 10px;
-      position: relative;
-    }
-    .nav-links a:hover{
-      color: var(--sky);
-      transform: translateY(-1px);
-    }
-    .nav-links a.active-link{
-      color: var(--sky);
-    }
+            {/* Aesthetic */}
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Aesthetic Applications</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Facial rejuvenation and skin quality</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Scalp and hair restoration</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Post-procedure recovery</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                  <span>Natural collagen stimulation without "filler face"</span>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-    .social-icons{
-      <a href="https://www.facebook.com/echelonwellnesssolutions/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
-  <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M22 12.06C22 6.52 17.52 2.04 11.98 2.04 6.44 2.04 1.96 6.52 1.96 12.06c0 5 3.66 9.14 8.44 9.88v-6.99H7.9v-2.89h2.5V9.86c0-2.47 1.47-3.84 3.73-3.84 1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54v1.85h2.72l-.43 2.89h-2.29v6.99c4.78-.74 8.44-4.88 8.44-9.88z" fill="currentColor"/>
-  </svg>
-</a>
-.social-svg{
-  width: 1.25rem;
-  height: 1.25rem;
-  display: block;
+          <div className="text-center mt-8">
+            <Link
+              href="/solutions"
+              className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center"
+            >
+              Explore Our Solutions
+              <ChevronRight className="w-5 h-5 ml-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Revenue Impact */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Real Revenue Growth, Real Numbers
+          </h2>
+          <div className="bg-blue-50 p-8 rounded-lg max-w-3xl mx-auto">
+            <h3 className="text-xl font-semibold mb-4">The Math:</h3>
+            <div className="space-y-3 mb-6">
+              <div className="flex justify-between">
+                <span>Traditional cortisone injection:</span>
+                <span className="font-semibold">Net loss or minimal profit</span>
+              </div>
+              <div className="flex justify-between">
+                <span>PRP injection:</span>
+                <span className="font-semibold">$50-100 net</span>
+              </div>
+              <div className="flex justify-between text-blue-600">
+                <span>Wharton's Jelly allograft:</span>
+                <span className="font-bold">$150+ net profit</span>
+              </div>
+            </div>
+            <div className="border-t border-blue-200 pt-6">
+              <p className="text-lg mb-2">Conservative Example:</p>
+              <p className="text-2xl font-bold text-blue-600">
+                20 injections/week × $150 = $3,000/week
+              </p>
+              <p className="text-3xl font-bold text-blue-600 mt-2">
+                $12,000+ additional monthly revenue
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Echelon */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            More Than Products—A Complete Practice Solution
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: 'Comprehensive Education',
+                items: ['FDA-compliant protocols', 'Science-based training', 'Patient communication', 'Peer network access']
+              },
+              {
+                title: 'Premium Products',
+                items: ['Wharton\'s Jelly', 'Exosomes', 'Cell factors', 'Peer-reviewed research']
+              },
+              {
+                title: 'Clinical Support',
+                items: ['Protocol development', 'Revenue modeling', 'Documentation', 'Ongoing consultation']
+              },
+              {
+                title: 'Evidence-Based',
+                items: ['Published studies', 'Third-party testing', 'Transparent ingredients', 'Real outcomes']
+              }
+            ].map((pillar, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-bold text-lg text-gray-900 mb-4">{pillar.title}</h3>
+                <ul className="space-y-2">
+                  {pillar.items.map((item, i) => (
+                    <li key={i} className="flex items-start text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Built for Healthcare Providers Who Want More
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { specialty: 'Chiropractors', focus: 'Comprehensive pain management, advanced care options, patient retention' },
+              { specialty: 'Podiatrists', focus: 'Cartilage defects, plantar fasciosis, neuropathy, sports injuries' },
+              { specialty: 'Pain Management', focus: 'Joint preservation, surgical alternatives, chronic pain protocols' },
+              { specialty: 'Orthopedic Surgeons', focus: 'Pre/post-surgical support, conservative treatment options' },
+              { specialty: 'Aesthetic Providers', focus: 'Natural rejuvenation, filler alternatives, skin quality' },
+              { specialty: 'Primary Care & Sports Medicine', focus: 'Expanding services, comprehensive care, patient retention' }
+            ].map((provider, idx) => (
+              <div key={idx} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{provider.specialty}</h3>
+                <p className="text-sm text-gray-600">{provider.focus}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Ready to Transform Your Practice?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100">
+            Schedule a free consultation to discuss how regenerative medicine can work for your specific practice, patient population, and growth goals.
+          </p>
+          <Link
+            href="/consultation"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Schedule Your Free Consultation Now
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }
+      import Head from 'next/head';
+import Link from 'next/link';
+import { Check, X } from 'lucide-react';
 
+export default function Solutions() {
+  const products = [
+    {
+      name: 'Nano Flex',
+      subtitle: 'Wharton\'s Jelly Allograft',
+      description: 'Concentrated Wharton\'s Jelly providing highest concentration of mesenchymal stem cells per milliliter.',
+      uses: ['Joint cartilage support', 'Tendon and ligament defects', 'Structural tissue supplementation'],
+      doses: '1ml (150mg), 2ml (300mg)'
+    },
+    {
+      name: 'Nano Flow',
+      subtitle: 'Ultra-Filtered Growth Factors',
+      description: '40 million mesenchymal growth factors in tissue-free, ultra-filtered formulation.',
+      uses: ['Enhanced cellular healing', 'Cartilage-based defects', 'Combination protocols'],
+      doses: '1ml, 2ml'
+    },
+    {
+      name: 'Nano Xsomes',
+      subtitle: 'Cord Blood-Derived Exosomes',
+      description: 'The ONLY exosome product backed by published, peer-reviewed studies.',
+      uses: ['Fibroblast proliferation', 'Stem cell migration', 'Anti-inflammatory applications'],
+      doses: '180B/mL'
+    },
+    {
+      name: 'Nano AER',
+      subtitle: 'Lyophilized Exosomes',
+      description: '50 billion shelf-stable, lyophilized exosomes requiring no refrigeration.',
+      uses: ['Pain management', 'Flexible applications', 'Multi-site practices'],
+      doses: '50B'
+    },
+    {
+      name: 'Nano EX',
+      subtitle: 'Aesthetic Exosomes',
+      description: '30 billion lyophilized exosomes for cosmetic applications.',
+      uses: ['Facial rejuvenation', 'Scalp treatments', 'Post-procedure recovery'],
+      doses: '30B'
+    },
+    {
+      name: 'Evercelle Cell Factors',
+      subtitle: 'Bioactive Cell Secretome',
+      description: 'Growth factors, cytokines, peptides, and extracellular vesicles that coordinate tissue repair.',
+      uses: ['Tissue repair signaling', 'Inflammation control', 'Both pain and aesthetic'],
+      doses: 'Contact for details'
+    },
+    {
+      name: 'Nano PRP Jelly',
+      subtitle: 'The PRP Alternative',
+      description: 'Wharton\'s Jelly-based alternative eliminating PRP pain, inflammation, and cost.',
+      uses: ['PRP replacement', 'High-volume practices', 'Cost-conscious protocols'],
+      doses: '3ml'
     }
-    .social-icons a{
-      color:#fff;
-      font-size:1.25rem;
-      transition: color 0.25s, transform 0.25s;
-      text-decoration:none;
-    }
-    .social-icons a:hover{
-      color: var(--sky);
-      transform: translateY(-2px);
-    }
+  ];
 
-    /* Buttons */
-    .btn{
-      padding: 1rem 2.2rem;
-      border:none;
-      border-radius: 999px;
-      font-size: 1.05rem;
-      cursor:pointer;
-      transition: all 0.25s ease;
-      text-decoration:none;
-      display:inline-block;
-      font-weight: 700;
-      letter-spacing: 0.1px;
-    }
-    .btn-primary{
-      background: var(--sky);
-      color:#fff;
-      box-shadow: 0 10px 26px rgba(94,179,228,0.30);
-    }
-    .btn-primary:hover{
-      background:#4a9fd4;
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(94,179,228,0.40);
-    }
-    .btn-secondary{
-      background:#fff;
-      color: var(--navy);
-      box-shadow: 0 10px 26px rgba(255,255,255,0.18);
-    }
-    .btn-secondary:hover{
-      background:#f3f4f6;
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(255,255,255,0.22);
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,0.10);
-      color:#fff;
-      border: 1px solid rgba(255,255,255,0.22);
-    }
-    .btn-ghost:hover{
-      background: rgba(255,255,255,0.16);
-      transform: translateY(-2px);
-    }
+  return (
+    <>
+      <Head>
+        <title>Regenerative Medicine Solutions | Echelon Wellness Solutions</title>
+        <meta name="description" content="Evidence-based regenerative solutions for pain management and aesthetic medicine. FDA Section 361 compliant products backed by peer-reviewed research." />
+      </Head>
 
-    /* Sections */
-    .section{
-      padding: 96px 1.5rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .section-alt{
-      background: linear-gradient(180deg, var(--soft) 0%, #ffffff 100%);
-    }
-    h2{
-      font-size: 2.6rem;
-      color: var(--navy);
-      margin-bottom: 1.2rem;
-      text-align:center;
-      letter-spacing: -0.4px;
-    }
-    .subtitle{
-      text-align:center;
-      font-size: 1.25rem;
-      color: #667085;
-      max-width: 980px;
-      margin: 0 auto 3.2rem;
-      line-height: 1.8;
-    }
-
-    /* Home hero - more visual */
-    .hero{
-      position:relative;
-      padding: 170px 1.5rem 110px;
-      color:#fff;
-      overflow:hidden;
-      background:
-        radial-gradient(1200px 600px at 20% 0%, rgba(94,179,228,0.35) 0%, rgba(94,179,228,0.0) 60%),
-        radial-gradient(1000px 520px at 85% 15%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.0) 55%),
-        linear-gradient(135deg, rgba(10,36,99,0.96) 0%, rgba(30,77,139,0.96) 100%);
-      text-align:center;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-80px;
-      background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%235eb3e4' stop-opacity='0.28'/%3E%3Cstop offset='100%25' stop-color='%235eb3e4' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='280' cy='140' r='180' fill='url(%23g)'/%3E%3Ccircle cx='760' cy='260' r='240' fill='url(%23g)'/%3E%3Ccircle cx='1040' cy='120' r='190' fill='url(%23g)'/%3E%3Cpath d='M0 420 C200 340 420 520 640 440 C860 360 980 460 1200 390 L1200 600 L0 600 Z' fill='%235eb3e4' opacity='0.07'/%3E%3C/svg%3E");
-      background-size: cover;
-      opacity: 0.95;
-      filter: blur(0px);
-      pointer-events:none;
-    }
-    .hero-inner{
-      position:relative;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .hero h1{
-      font-size: 3.5rem;
-      margin-bottom: 0.85rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
-      animation: fadeInUp 0.9s ease;
-    }
-    .hero .tagline{
-      font-size: 1.85rem;
-      font-style: italic;
-      margin-bottom: 1.6rem;
-      font-weight: 300;
-      color: var(--sky);
-      animation: fadeInUp 1.05s ease;
-    }
-    .hero p{
-      font-size: 1.2rem;
-      max-width: 980px;
-      margin: 0 auto 2.6rem;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.92);
-      animation: fadeInUp 1.2s ease;
-    }
-    @keyframes fadeInUp{
-      from{ opacity:0; transform: translateY(24px); }
-      to{ opacity:1; transform: translateY(0); }
-    }
-    .cta-buttons{
-      display:flex;
-      gap: 1rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      animation: fadeInUp 1.35s ease;
-    }
-
-    /* Pathways cards (Home) */
-    .pathways{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.6rem;
-    }
-    .path-card{
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      cursor:pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      position:relative;
-      border: 1px solid rgba(10,36,99,0.06);
-    }
-    .path-card:hover{
-      transform: translateY(-10px);
-      box-shadow: 0 26px 70px rgba(0,0,0,0.14);
-    }
-    .path-top{
-      height: 160px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      padding: 1.25rem 1.25rem 1rem;
-      color:#fff;
-      position:relative;
-      overflow:hidden;
-    }
-    .path-top::after{
-      content:"";
-      position:absolute;
-      inset:-60px -60px auto -60px;
-      height: 240px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 55%);
-      transform: rotate(8deg);
-      pointer-events:none;
-    }
-    .path-icon{
-      font-size: 2.2rem;
-      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22));
-    }
-    .path-title{
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-    }
-    .path-sub{
-      font-size: 0.95rem;
-      opacity: 0.90;
-      margin-top: 0.2rem;
-    }
-    .path-body{
-      padding: 1.25rem 1.25rem 1.35rem;
-    }
-    .path-body p{
-      color: #4b5563;
-      line-height: 1.75;
-      margin-bottom: 1rem;
-      font-size: 1.02rem;
-    }
-    .path-chiprow{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .chip{
-      font-size: 0.82rem;
-      padding: 0.35rem 0.65rem;
-      border-radius: 999px;
-      background: rgba(94,179,228,0.13);
-      color: var(--navy2);
-      font-weight: 700;
-    }
-    .path-cta{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      color: var(--navy);
-      font-weight: 800;
-    }
-    .arrow{
-      width: 36px; height: 36px;
-      border-radius: 999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: rgba(10,36,99,0.06);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-    .path-card:hover .arrow{
-      transform: translateX(4px);
-      background: rgba(94,179,228,0.18);
-    }
-
-    .grad-reg{
-      background: linear-gradient(135deg, rgba(10,36,99,0.95) 0%, rgba(30,77,139,0.92) 100%);
-    }
-    .grad-aes{
-      background: linear-gradient(135deg, rgba(94,179,228,0.95) 0%, rgba(30,77,139,0.92) 100%);
-    }
-    .grad-vet{
-      background: linear-gradient(135deg, rgba(16,185,129,0.90) 0%, rgba(10,36,99,0.92) 100%);
-    }
-
-    /* Feature grid */
-    .features{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.8rem;
-    }
-    .feature{
-      background:#fff;
-      border-radius: 16px;
-      box-shadow: var(--shadow2);
-      padding: 2.2rem 1.6rem;
-      text-align:center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      border: 1px solid rgba(10,36,99,0.06);
-    }
-    .feature:hover{
-      transform: translateY(-8px);
-      box-shadow: 0 18px 55px rgba(0,0,0,0.12);
-    }
-    .feature .icon{ font-size: 3rem; margin-bottom: 1rem; }
-    .feature h3{ color: var(--navy); margin-bottom: 0.55rem; font-size: 1.35rem; }
-    .feature p{ color: #667085; line-height:1.8; }
-
-    /* Page hero */
-    .page-hero{
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      color:#fff;
-      padding: 150px 1.5rem 80px;
-      text-align:center;
-    }
-    .page-hero h1{
-      font-size: 3.1rem;
-      margin-bottom: 0.9rem;
-    }
-    .page-hero p{
-      font-size: 1.2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.92);
-    }
-    .page-hero .mini-cta{
-      margin-top: 1.6rem;
-      display:flex;
-      justify-content:center;
-      gap: 0.9rem;
-      flex-wrap:wrap;
-    }
-
-    /* Banners */
-    .visual-banner{
-      width:100%;
-      height: 260px;
-      border-radius: 16px;
-      margin: 2.4rem 0;
-      box-shadow: var(--shadow2);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      font-size: 1.6rem;
-      font-weight: 800;
-      text-align:center;
-      padding: 1rem;
-      position:relative;
-      overflow:hidden;
-    }
-    .visual-banner::after{
-      content:"";
-      position:absolute;
-      inset:-90px;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 60%);
-      transform: rotate(10deg);
-      pointer-events:none;
-    }
-    .banner-reg{
-      background: linear-gradient(135deg, rgba(10,36,99,0.86) 0%, rgba(30,77,139,0.88) 100%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%230a2463" width="1200" height="300"/><circle cx="210" cy="150" r="95" fill="%235eb3e4" opacity="0.2"/><circle cx="640" cy="115" r="70" fill="%235eb3e4" opacity="0.14"/><circle cx="1010" cy="180" r="105" fill="%235eb3e4" opacity="0.2"/><path fill="%235eb3e4" opacity="0.08" d="M0 190 Q300 110 600 190 T1200 190 V300 H0 Z"/></svg>');
-    }
-    .banner-aes{
-      background: linear-gradient(135deg, rgba(94,179,228,0.92) 0%, rgba(30,77,139,0.88) 100%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%235eb3e4" width="1200" height="300"/><path fill="white" opacity="0.12" d="M0 150 Q300 95 600 150 T1200 150 V300 H0 Z"/><path fill="white" opacity="0.10" d="M0 210 Q300 155 600 210 T1200 210 V300 H0 Z"/><circle cx="220" cy="90" r="55" fill="white" opacity="0.16"/><circle cx="970" cy="120" r="62" fill="white" opacity="0.16"/></svg>');
-    }
-    .banner-vet{
-      background: linear-gradient(135deg, rgba(16,185,129,0.84) 0%, rgba(10,36,99,0.90) 100%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%230a2463" width="1200" height="300"/><circle cx="240" cy="160" r="90" fill="%2310b981" opacity="0.20"/><circle cx="620" cy="110" r="70" fill="%2310b981" opacity="0.14"/><circle cx="980" cy="180" r="100" fill="%2310b981" opacity="0.18"/><path fill="%2310b981" opacity="0.08" d="M0 205 Q320 120 640 205 T1200 205 V300 H0 Z"/></svg>');
-    }
-
-    /* Product cards */
-    .product-card{
-      background:#fff;
-      padding: 2.2rem;
-      border-radius: 16px;
-      box-shadow: var(--shadow2);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      border-top: 4px solid var(--sky);
-      margin-bottom: 1.5rem;
-      border-left: 1px solid rgba(10,36,99,0.06);
-      border-right: 1px solid rgba(10,36,99,0.06);
-      border-bottom: 1px solid rgba(10,36,99,0.06);
-    }
-    .product-card:hover{
-      transform: translateY(-8px);
-      box-shadow: 0 18px 55px rgba(0,0,0,0.12);
-    }
-    .product-card h3{
-      color: var(--navy);
-      font-size: 1.85rem;
-      margin-bottom: 0.35rem;
-    }
-    .product-subtitle{
-      color: var(--sky);
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 1.1rem;
-    }
-    .product-highlight{
-      background: linear-gradient(135deg, var(--sky) 0%, #4a9fd4 100%);
-      color:#fff;
-      padding: 1rem;
-      border-radius: 12px;
-      margin: 1rem 0 1.1rem;
-      text-align:center;
-      font-weight: 800;
-      font-size: 1.05rem;
-    }
-    .product-card p{
-      color:#4b5563;
-      line-height:1.85;
-      margin-bottom: 1.1rem;
-      font-size: 1.02rem;
-    }
-    .product-card h4{
-      color: var(--navy);
-      font-size: 1.15rem;
-      margin: 1.1rem 0 0.7rem;
-      border-bottom: 2px solid rgba(94,179,228,0.55);
-      padding-bottom: 0.4rem;
-      display:inline-block;
-    }
-    .product-card ul{
-      margin-left: 1.2rem;
-      color:#4b5563;
-      line-height:1.85;
-    }
-    .product-card li{ margin-bottom: 0.55rem; }
-
-    /* Vet PDF panel */
-    .pdf-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .pdf-card{
-      background:#fff;
-      border-radius: 16px;
-      box-shadow: var(--shadow2);
-      border: 1px solid rgba(10,36,99,0.06);
-      overflow:hidden;
-    }
-    .pdf-card .pdf-head{
-      padding: 1.15rem 1.2rem;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 1rem;
-      background: linear-gradient(135deg, rgba(10,36,99,0.06) 0%, rgba(94,179,228,0.10) 100%);
-    }
-    .pdf-card .pdf-head h3{
-      font-size: 1.05rem;
-      color: var(--navy);
-      margin: 0;
-      font-weight: 900;
-    }
-    .pdf-actions{
-      display:flex;
-      gap: 0.6rem;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .pdf-actions a{
-      font-size: 0.92rem;
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
-      text-decoration:none;
-      font-weight: 900;
-      border: 1px solid rgba(10,36,99,0.12);
-      color: var(--navy);
-      background:#fff;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .pdf-actions a:hover{
-      transform: translateY(-2px);
-      background: #f3f4f6;
-    }
-    .pdf-frame{
-      width: 100%;
-      height: 520px;
-      border: 0;
-      display:block;
-      background:#fff;
-    }
-
-    /* Contact section */
-    .contact-section{
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      color:#fff;
-      padding: 90px 1.5rem;
-      text-align:center;
-    }
-    .contact-section h2{ color:#fff; }
-    .contact-info{
-      display:flex;
-      justify-content:center;
-      gap: 3rem;
-      margin-top: 2.4rem;
-      flex-wrap:wrap;
-    }
-    .contact-item{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: 0.65rem;
-      padding: 1.4rem 1.2rem;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.14);
-      min-width: 280px;
-    }
-    .contact-item a{
-      color: var(--sky);
-      text-decoration:none;
-      font-size: 1.15rem;
-      transition: color 0.25s;
-      font-weight: 900;
-    }
-    .contact-item a:hover{ color:#fff; }
-    .contact-icon{ font-size: 2.2rem; color: var(--sky); }
-
-    footer{
-      background: var(--navy);
-      color:#fff;
-      text-align:center;
-      padding: 2.2rem 1.5rem;
-    }
-    .footer-social{ margin: 1.2rem 0; }
-    .footer-social a{
-      color: var(--sky);
-      font-size: 1.6rem;
-      margin: 0 0.75rem;
-      transition: color 0.25s;
-      text-decoration:none;
-    }
-    .footer-social a:hover{ color:#fff; }
-
-    /* Responsive */
-    @media (max-width: 1100px){
-      .pathways{ grid-template-columns: 1fr; }
-      .features{ grid-template-columns: 1fr; }
-      .pdf-grid{ grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px){
-      .hero h1{ font-size: 2.4rem; }
-      .hero .tagline{ font-size: 1.35rem; }
-      .page-hero h1{ font-size: 2.3rem; }
-      .logo-container img{ height: 46px; }
-      .brand-mini{ display:none; }
-    }
-  </style>
-</head>
-
-<body>
-<header>
-  <nav>
-    <div class="logo-container" onclick="showPage('home')">
-      <img src="https://i.ibb.co/GCqwH7G/echelon-logo.png" alt="Echelon Wellness Solutions" />
-      <div class="brand-mini">
-        <div class="name">Echelon Wellness Solutions</div>
-        <div class="tag">Supporting the Future of Wellness</div>
-      </div>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a id="link-home" onclick="showPage('home')">Home</a></li>
-      <li><a id="link-regenerative" onclick="showPage('regenerative')">Regenerative Medicine</a></li>
-      <li><a id="link-aesthetic" onclick="showPage('aesthetic')">Aesthetic Solutions</a></li>
-      <li><a id="link-veterinary" onclick="showPage('veterinary')">Veterinary (Spring 2026)</a></li>
-      <li><a id="link-about" onclick="showPage('about')">About</a></li>
-      <li><a id="link-contact" onclick="showPage('contact')">Contact</a></li>
-
-      <div class="social-icons">
-        <a href="#" title="Facebook">📘</a>
-        <a href="#" title="LinkedIn">💼</a>
-        <a href="#" title="Instagram">📷</a>
-      </div>
-    </ul>
-  </nav>
-</header>
-
-<!-- HOME -->
-<div id="home" class="page active">
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>Supporting the Future of Wellness</h1>
-      <p class="tagline">Advanced Regenerative Medicine • Aesthetic Solutions • Veterinary Innovation</p>
-      <p>
-        Echelon Wellness Solutions partners with clinics, med spas, and providers to bring forward-thinking
-        regenerative and aesthetic solutions—backed by education, protocols, and hands-on support.
-      </p>
-      <div class="cta-buttons">
-        <a onclick="showPage('contact')" class="btn btn-primary">Schedule a Consultation</a>
-        <a onclick="showPage('regenerative')" class="btn btn-secondary">Explore Our Solutions</a>
-        <a onclick="showPage('veterinary')" class="btn btn-ghost">Veterinary (Spring 2026)</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Your Solutions, Organized by Pathway</h2>
-    <p class="subtitle">
-      The Home page stays high-level on purpose—product details live on each dedicated page so your site feels clean,
-      modern, and easy to navigate.
-    </p>
-
-    <div class="pathways">
-      <div class="path-card" onclick="showPage('regenerative')">
-        <div class="path-top grad-reg">
-          <div>
-            <div class="path-title">Regenerative Medicine</div>
-            <div class="path-sub">Pain management • Ortho • Tissue support</div>
-          </div>
-          <div class="path-icon">🏥</div>
-        </div>
-        <div class="path-body">
-          <p>
-            Solutions designed to support inflammation modulation, tissue repair pathways, and recovery protocols—
-            positioned for modern regenerative practices.
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Evidence-Based Regenerative Solutions
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl">
+            Offer your patients proven, non-surgical treatment options backed by peer-reviewed research and FDA Section 361 compliance.
           </p>
-          <div class="path-chiprow">
-            <span class="chip">Protocols</span>
-            <span class="chip">Training</span>
-            <span class="chip">Clinic Support</span>
-          </div>
-          <div class="path-cta">
-            <span>Explore Regenerative</span>
-            <div class="arrow">➜</div>
-          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="path-card" onclick="showPage('aesthetic')">
-        <div class="path-top grad-aes">
-          <div>
-            <div class="path-title">Aesthetic Solutions</div>
-            <div class="path-sub">Procedure enhancement • Skin health • Recovery</div>
+      {/* The Science */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Why Allogeneic Biologics?
+          </h2>
+          <div className="prose prose-lg text-gray-700">
+            <p>
+              At Echelon Wellness Solutions, we focus on allogeneic biologics—specifically umbilical cord-derived products including Wharton's Jelly, exosomes, and cell factors. These products work through collagenic differentiation and extracellular matrix (ECM) support.
+            </p>
           </div>
-          <div class="path-icon">✨</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            {[
+              { title: 'Immune Privilege', desc: 'Low likelihood of triggering immune response' },
+              { title: 'Superior ECM', desc: 'Complete structural scaffold for tissue support' },
+              { title: 'Growth Factor Profile', desc: 'VEGF, PDGF, TGF-β, IGF-1, anti-inflammatory cytokines' },
+              { title: 'Peer-Reviewed', desc: 'Backed by published, objective evidence' }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-blue-50 p-6 rounded-lg">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="path-body">
-          <p>
-            Elevated aesthetic offerings for med spas and wellness clinics—designed to complement popular procedures
-            and support post-treatment recovery.
+      </section>
+
+      {/* Product Portfolio */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Our Premium Product Portfolio
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, idx) => (
+              <div key={idx} className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
+                <p className="text-sm text-blue-600 mb-4">{product.subtitle}</p>
+                <p className="text-gray-600 mb-4">{product.description}</p>
+                <div className="space-y-2 mb-4">
+                  <p className="text-sm font-semibold text-gray-900">Best For:</p>
+                  {product.uses.map((use, i) => (
+                    <div key={i} className="flex items-start text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{use}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="text-xs text-gray-500">Doses: {product.doses}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FDA Compliance */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            FDA Section 361 Compliance: What It Means for Your Practice
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            We take regulatory compliance seriously—and we'll teach you how to practice confidently within FDA guidelines.
           </p>
-          <div class="path-chiprow">
-            <span class="chip">Microneedling</span>
-            <span class="chip">Skin</span>
-            <span class="chip">Scalp</span>
-          </div>
-          <div class="path-cta">
-            <span>Explore Aesthetics</span>
-            <div class="arrow">➜</div>
+          <div className="bg-white border-2 border-gray-200 p-8 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="font-semibold text-green-600 mb-4 flex items-center">
+                  <Check className="w-5 h-5 mr-2" />
+                  What You CAN Say:
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="pl-4">"This product supplements cartilage-based defects"</li>
+                  <li className="pl-4">"Provides structural support to connective tissue"</li>
+                  <li className="pl-4">"May support your body's natural healing"</li>
+                  <li className="pl-4">"Collagen-based tissue supplement"</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-red-600 mb-4 flex items-center">
+                  <X className="w-5 h-5 mr-2" />
+                  What You CANNOT Say:
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="pl-4">"This treats osteoarthritis"</li>
+                  <li className="pl-4">"Stem cells will regenerate your cartilage"</li>
+                  <li className="pl-4">"This cures [any condition]"</li>
+                  <li className="pl-4">"This will heal your disc"</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Key Principles:</h4>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li><strong>Homologous Use:</strong> Cartilage-based tissue supplements cartilage-based defects</li>
+                <li><strong>Local Application:</strong> Applied to specific, localized areas</li>
+                <li><strong>Structural Support:</strong> Providing ECM scaffolding, not disease treatment</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="path-card" onclick="showPage('veterinary')">
-        <div class="path-top grad-vet">
-          <div>
-            <div class="path-title">Veterinary</div>
-            <div class="path-sub">Coming Spring 2026 • Canine + Equine</div>
+      {/* Who We Serve */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            Who We Serve
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { specialty: 'Chiropractors', focus: 'Comprehensive pain management, spinal applications, patient retention' },
+              { specialty: 'Podiatrists', focus: 'Cartilage defects, plantar fasciosis, neuropathy' },
+              { specialty: 'Pain Management', focus: 'Joint preservation, surgical alternatives' },
+              { specialty: 'Orthopedic Surgeons', focus: 'Pre/post-surgical support, conservative options' },
+              { specialty: 'Aesthetic Providers', focus: 'Natural rejuvenation, filler alternatives' },
+              { specialty: 'Primary Care', focus: 'Expanding services, patient retention' }
+            ].map((provider, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{provider.specialty}</h3>
+                <p className="text-sm text-gray-600">{provider.focus}</p>
+              </div>
+            ))}
           </div>
-          <div class="path-icon">🐾</div>
         </div>
-        <div class="path-body">
-          <p>
-            A dedicated veterinary initiative focused on clinician-friendly, scalable regenerative education and
-            product positioning—launching Spring 2026.
+      </section>
+
+      {/* Implementation */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            From Decision to First Patient: Your Implementation Path
+          </h2>
+          <div className="space-y-6">
+            {[
+              { phase: 'Week 1-2: Education & Training', items: ['Science-based training', 'FDA compliance', 'Clinical protocols', 'Patient communication'] },
+              { phase: 'Week 2-3: Business Planning', items: ['Revenue modeling', 'Pricing strategy', 'Marketing materials', 'Documentation'] },
+              { phase: 'Week 3-4: Product Selection', items: ['Choose product mix', 'Order first batch', 'Storage setup'] },
+              { phase: 'Week 4-6: Launch', items: ['First patients', 'Apply protocols', 'Document outcomes', 'Refine approach'] },
+              { phase: 'Ongoing: Growth', items: ['Peer network access', 'Protocol updates', 'Scale volume', 'Track ROI'] }
+            ].map((step, idx) => (
+              <div key={idx} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="font-bold text-lg text-gray-900 mb-3">{step.phase}</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {step.items.map((item, i) => (
+                    <div key={i} className="flex items-center text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Ready to Explore Regenerative Medicine?
+          </h2>
+          <Link
+            href="/consultation"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Schedule Your Consultation
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
+      import Head from 'next/head';
+import Link from 'next/link';
+import { Check } from 'lucide-react';
+
+export default function About() {
+  return (
+    <>
+      <Head>
+        <title>About Us | Echelon Wellness Solutions</title>
+        <meta name="description" content="Learn about Echelon Wellness Solutions and our mission to empower healthcare providers through evidence-based regenerative medicine." />
+      </Head>
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Empowering Healthcare Providers Through Evidence-Based Regenerative Medicine
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl">
+            We're not just a biologics supplier—we're your partner in building a sustainable, profitable practice that delivers superior patient outcomes.
           </p>
-          <div class="path-chiprow">
-            <span class="chip">Clinician Overview</span>
-            <span class="chip">Canine</span>
-            <span class="chip">Equine</span>
-          </div>
-          <div class="path-cta">
-            <span>View Veterinary Page</span>
-            <div class="arrow">➜</div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+          <div className="space-y-4 text-lg text-gray-700">
+            <p>
+              The healthcare landscape is changing rapidly. Insurance reimbursements are declining, overhead costs are rising, and patients are increasingly seeking alternatives to surgery and pharmaceutical management.
+            </p>
+            <p>
+              Echelon Wellness Solutions was founded on a simple belief: <strong>Healthcare providers deserve better.</strong>
+            </p>
+            <p>
+              Better education. Better products. Better support. Better outcomes—both for patients and for practice sustainability.
+            </p>
+            <p>
+              We exist to bridge the gap between cutting-edge regenerative science and practical clinical application, helping healthcare providers integrate evidence-based regenerative medicine with confidence, compliance, and profitability.
+            </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section section-alt">
-    <h2>Why Echelon?</h2>
-    <p class="subtitle">A partner that supports implementation—not just product selection.</p>
-
-    <div class="features">
-      <div class="feature">
-        <div class="icon">🏆</div>
-        <h3>Authorized Representation</h3>
-        <p>Manufacturer-aligned education and support—built for real-world clinic operations.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🔬</div>
-        <h3>Science + Practicality</h3>
-        <p>Clear clinician messaging, protocols, and use-case positioning that patients understand.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🤝</div>
-        <h3>Full Support</h3>
-        <p>Training, onboarding, and ongoing practice growth support to help you scale confidently.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section">
-    <h2>Ready to Build Your Next Offering?</h2>
-    <p style="font-size:1.2rem; margin:1.2rem auto 2rem; max-width: 900px; color: rgba(255,255,255,0.92);">
-      Schedule a quick consult and we’ll map the right pathway (regenerative, aesthetic, or veterinary) for your practice.
-    </p>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Email</div>
-        <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">📱</div>
-        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Phone</div>
-        <a href="tel:864-381-0808">864-381-0808</a>
-      </div>
-    </div>
-
-    <div style="margin-top: 2.2rem;">
-      <a onclick="showPage('contact')" class="btn btn-primary" style="font-size:1.15rem; padding: 1.1rem 2.6rem;">Schedule Your Consultation</a>
-    </div>
-  </section>
-</div>
-
-<!-- REGENERATIVE -->
-<div id="regenerative" class="page">
-  <section class="page-hero">
-    <h1>Regenerative Medicine</h1>
-    <p>
-      Advanced regenerative offerings for pain management, orthopedic care, and tissue support—paired with training,
-      protocols, and practice implementation support.
-    </p>
-    <div class="mini-cta">
-      <a onclick="showPage('contact')" class="btn btn-primary">Talk With Us</a>
-      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="visual-banner banner-reg">🏥 Advanced Pain Management & Tissue Support</div>
-
-    <!-- Product detail stays HERE (not on Home) -->
-    <div class="product-card">
-      <h3>Nano Flow</h3>
-      <p class="product-subtitle">Umbilical Cord-Derived MSC Growth Factor Formula</p>
-      <div class="product-highlight">40 Million MSC Growth Factors</div>
-      <p>
-        A biologically active, tissue-free growth factor media designed to support collagen-based healing and cellular-level regeneration.
-      </p>
-      <h4>Clinical Applications</h4>
-      <ul>
-        <li>Joint pain and inflammation</li>
-        <li>Cartilage defects and osteoarthritis</li>
-        <li>Tissue repair and recovery protocols</li>
-        <li>Sports medicine use cases</li>
-      </ul>
-    </div>
-
-    <div class="product-card">
-      <h3>Nano Flex</h3>
-      <p class="product-subtitle">Concentrated Wharton’s Jelly Allograft</p>
-      <div class="product-highlight">150mg & 300mg Concentrations Available</div>
-      <p>
-        A high-concentration Wharton’s Jelly option rich in extracellular matrix components and biologically active factors.
-      </p>
-      <h4>Ideal For</h4>
-      <ul>
-        <li>Orthopedic and sports medicine practices</li>
-        <li>Pain management physicians</li>
-        <li>Regenerative medicine clinics</li>
-      </ul>
-    </div>
-
-    <div class="product-card">
-      <h3>Nano PRP Jelly</h3>
-      <p class="product-subtitle">Practical PRP Alternative</p>
-      <div class="product-highlight">Practically Painless • Designed for Clinic Workflow</div>
-      <p>
-        Collagen-based mesenchymal connective tissue positioning intended as a practical alternative where PRP has historically been used.
-      </p>
-      <h4>Common Use Cases</h4>
-      <ul>
-        <li>Joint injections</li>
-        <li>Cosmetic procedure support</li>
-        <li>Scalp protocols</li>
-      </ul>
-    </div>
-
-    <div class="product-card">
-      <h3>Nano Xsomes</h3>
-      <p class="product-subtitle">Cord Blood (Plasma)-Derived Exosome</p>
-      <div class="product-highlight">Regenerative Signaling • Clinician-Friendly Positioning</div>
-      <p>
-        Exosome-focused option positioned for a wide range of regenerative applications, emphasizing potency and characterization.
-      </p>
-      <h4>Common Considerations</h4>
-      <ul>
-        <li>Regenerative signaling support</li>
-        <li>Recovery and tissue support positioning</li>
-        <li>Integration with clinic protocols</li>
-      </ul>
-    </div>
-
-    <div style="text-align:center; margin-top: 2.2rem;">
-      <a onclick="showPage('contact')" class="btn btn-primary">Request Pricing / Ordering Support</a>
-    </div>
-  </section>
-</div>
-
-<!-- AESTHETIC -->
-<div id="aesthetic" class="page">
-  <section class="page-hero">
-    <h1>Aesthetic Solutions</h1>
-    <p>
-      Elevated options designed to complement aesthetic procedures and skin/scalp protocols—paired with education,
-      marketing support, and clinician-ready positioning.
-    </p>
-    <div class="mini-cta">
-      <a onclick="showPage('contact')" class="btn btn-primary">Talk With Us</a>
-      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="visual-banner banner-aes">✨ Skin • Scalp • Post-Procedure Support</div>
-
-    <div class="product-card">
-      <h3>NanoEX</h3>
-      <p class="product-subtitle">Bioengineered Skin Health Positioning</p>
-      <div class="product-highlight">Designed to Complement Cosmetic Protocols</div>
-      <p>
-        Aesthetic-focused positioning around post-treatment recovery support, skin/scalp protocols, and daily regimen integration.
-      </p>
-      <h4>Common Med Spa Use Cases</h4>
-      <ul>
-        <li>Microneedling enhancement protocols</li>
-        <li>Post-treatment recovery positioning</li>
-        <li>Skin + scalp support offerings</li>
-      </ul>
-    </div>
-
-    <div class="product-card">
-      <h3>Nano AER</h3>
-      <p class="product-subtitle">Lyophilized Exosome Positioning</p>
-      <div class="product-highlight">Shelf-Stable • Designed for Application Flexibility</div>
-      <p>
-        A shelf-stable option positioned for aesthetic protocol integration with flexibility across patient needs.
-      </p>
-      <h4>Program Integration</h4>
-      <ul>
-        <li>Procedure add-on positioning</li>
-        <li>Membership / package upsell options</li>
-        <li>Clinician education and patient-facing messaging</li>
-      </ul>
-    </div>
-
-    <div style="text-align:center; margin-top: 2.2rem;">
-      <a onclick="showPage('contact')" class="btn btn-primary">Build an Aesthetic Protocol</a>
-    </div>
-  </section>
-</div>
-
-<!-- VETERINARY -->
-<div id="veterinary" class="page">
-  <section class="page-hero">
-    <h1>Veterinary</h1>
-    <p>
-      Coming <strong>Spring 2026</strong>: A dedicated veterinary initiative focused on clinician-friendly regenerative education and scalable offerings
-      for <strong>canine + equine</strong> practices.
-    </p>
-    <div class="mini-cta">
-      <a onclick="showPage('contact')" class="btn btn-primary">Join the Interest List</a>
-      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="visual-banner banner-vet">🐾 Veterinary Innovation • Clinician-Ready • Spring 2026</div>
-
-    <h2>Clinician Overview</h2>
-    <p class="subtitle">
-      This page summarizes the clinician story and includes the one-page PDFs you can share with veterinarians.
-    </p>
-
-    <div class="product-card" style="border-top-color: #10b981;">
-      <h3>What Are “Cell Factors”?</h3>
-      <p class="product-subtitle">Cell Secretome / Acellular Biologics</p>
-      <p>
-        Cell Factors refer to bioactive signaling molecules secreted by cells—commonly including growth factors, cytokines, peptides,
-        and extracellular vesicles (EVs/exosomes). The clinical story emphasizes that many benefits associated with stem cell therapies
-        are driven by signaling (not cell engraftment).
-      </p>
-
-      <h4>Why Medicine Is Moving Cell-Free</h4>
-      <ul>
-        <li>More consistent dosing and outcomes</li>
-        <li>Easier storage and administration</li>
-        <li>Clinic-friendly scalability and workflow</li>
-        <li>Reduced complexity associated with live-cell handling</li>
-      </ul>
-
-      <h4>Veterinary Translation</h4>
-      <ul>
-        <li>Shared regenerative signaling pathways across mammalian species</li>
-        <li>Fits joint, tendon/ligament, wound, airway, and recovery use-case education</li>
-        <li>Strong client education story: “advanced regenerative signaling—without stem cells”</li>
-      </ul>
-
-      <div class="product-highlight" style="background: linear-gradient(135deg, #10b981 0%, #0a2463 100%);">
-        Launch Target: Spring 2026 • Canine + Equine Focus
-      </div>
-    </div>
-
-    <h2 style="margin-top: 3.2rem;">Shareable PDFs</h2>
-    <p class="subtitle">
-      Place these PDF files in the same folder as this HTML file (or update the links to where you host them).
-    </p>
-
-    <div class="pdf-grid">
-      <div class="pdf-card">
-        <div class="pdf-head">
-          <h3>Human Cell Factors — Veterinary Overview (PDF)</h3>
-          <div class="pdf-actions">
-            <a href="Human_Cell_Factors_Veterinary_Overview.pdf" target="_blank" rel="noopener">Open</a>
-            <a href="Human_Cell_Factors_Veterinary_Overview.pdf" download>Download</a>
+      {/* Founder Bio */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-1">
+              <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Add your photo to /public/images/founder.jpg</span>
+              </div>
+            </div>
+            <div className="md:col-span-2">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet the Founder</h2>
+              <div className="space-y-4 text-gray-700">
+                <p>
+                  I'm a healthcare operator and entrepreneur with a genuine passion for helping clinics and providers deliver better, more forward-thinking care. Much of my work has centered around supporting wellness practices as they grow—operationally, financially, and clinically—while staying aligned with what truly benefits patients.
+                </p>
+                <p>
+                  I founded Echelon Wellness Solutions to support the future of wellness by connecting medical and wellness practices with trusted regenerative, aesthetic, and clinical solutions. My focus is on practical implementation: making sure innovative therapies, products, and partnerships actually work in real-world clinical settings, not just on paper.
+                </p>
+                <p>
+                  My background includes healthcare operations, finance, and business development, which allows me to take a hands-on, thoughtful approach to building and supporting healthcare businesses. I'm especially interested in regenerative medicine, longevity, and emerging biologics, and I enjoy working alongside clinicians who care deeply about doing things the right way.
+                </p>
+                <p>
+                  I value long-term relationships, integrity, and building businesses that last. I believe the future of healthcare will be shaped by people who combine innovation with responsibility and sound clinical judgment.
+                </p>
+                <p className="font-semibold text-gray-900">
+                  I'm always open to connecting with providers, clinic owners, and partners who are passionate about the direction healthcare and wellness are heading.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <iframe class="pdf-frame" src="Human_Cell_Factors_Veterinary_Overview.pdf"></iframe>
-      </div>
+      </section>
 
-      <div class="pdf-card">
-        <div class="pdf-head">
-          <h3>One-Page Clinician Summary (PDF)</h3>
-          <div class="pdf-actions">
-            <a href="ONE-PAGE CLINICIAN SUMMARY.pdf" target="_blank" rel="noopener">Open</a>
-            <a href="ONE-PAGE CLINICIAN SUMMARY.pdf" download>Download</a>
+      {/* Our Story */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Echelon Wellness Solutions Exists</h2>
+          <div className="space-y-4 text-lg text-gray-700">
+            <p>
+              Echelon Wellness Solutions was born from recognizing a critical gap in the regenerative medicine market: providers wanted to offer advanced biologics to their patients but were overwhelmed by conflicting information, regulatory confusion, products making wild claims without peer-reviewed evidence, and lack of practical business guidance.
+            </p>
+            <p>
+              We saw practices struggling with declining reimbursements while watching patients seek regenerative treatments elsewhere—often from providers with less training and expertise. We knew there had to be a better way.
+            </p>
+            <p>
+              That's when we partnered with leading regenerative medicine experts, including Dr. Scott Martin, whose evidence-based approach to biologics education has transformed how providers understand and apply these treatments.
+            </p>
           </div>
         </div>
-        <iframe class="pdf-frame" src="ONE-PAGE CLINICIAN SUMMARY.pdf"></iframe>
-      </div>
-    </div>
+      </section>
 
-    <div style="text-align:center; margin-top: 2.2rem;">
-      <a onclick="showPage('contact')" class="btn btn-primary">Request Vet Launch Details</a>
-    </div>
-  </section>
-</div>
+      {/* Values */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">What Drives Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { title: 'Science Over Marketing', desc: 'We don\'t make exaggerated claims. Our products are backed by peer-reviewed research and transparent testing.' },
+              { title: 'Education First', desc: 'Knowledge is power. We invest heavily in provider education because informed practitioners get better results.' },
+              { title: 'Regulatory Compliance', desc: 'We take FDA Section 361 compliance seriously and teach you how to stay within regulatory boundaries.' },
+              { title: 'Transparency & Trust', desc: 'We openly share product contents, testing results, and publications. What you see is what you get.' },
+              { title: 'Provider Success', desc: 'Your success is our success. We help with protocols, business modeling, and ongoing support.' },
+              { title: 'Patient-Centered Care', desc: 'Everything we do serves one purpose: helping your patients get better outcomes.' }
+            ].map((value, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-bold text-lg text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-<!-- ABOUT -->
-<div id="about" class="page">
-  <section class="page-hero">
-    <h1>About Echelon</h1>
-    <p>
-      Echelon Wellness Solutions supports providers with modern regenerative and aesthetic solutions—plus education,
-      protocols, and implementation support that fits real clinic workflows.
-    </p>
-    <div class="mini-cta">
-      <a onclick="showPage('contact')" class="btn btn-primary">Work With Us</a>
-      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
-    </div>
-  </section>
+      {/* Our Approach */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">How We're Different</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-red-50 p-6 rounded-lg">
+              <h3 className="font-bold text-lg text-red-900 mb-4">Most Biologics Companies:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Focus solely on product sales</li>
+                <li>• Make unsubstantiated "stem cell miracle" claims</li>
+                <li>• Provide minimal education or training</li>
+                <li>• Leave you on your own after purchase</li>
+                <li>• Prioritize volume over provider success</li>
+              </ul>
+            </div>
+            <div className="bg-green-50 p-6 rounded-lg">
+              <h3 className="font-bold text-lg text-green-900 mb-4">Echelon Wellness Solutions:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Partner with you for long-term success</li>
+                <li>• Teach evidence-based science and proper terminology</li>
+                <li>• Provide comprehensive education and ongoing support</li>
+                <li>• Connect you with peer network for questions</li>
+                <li>• Focus on sustainable practice growth</li>
+              </ul>
+            </div>
+          </div>
 
-  <section class="section">
-    <div class="product-card">
-      <h3>Our Mission</h3>
-      <p>
-        To help clinics and med spas confidently adopt advanced wellness solutions with clear protocols, clinician education,
-        and patient-friendly messaging—so your team can implement and scale with consistency.
-      </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Comprehensive Education',
+                desc: 'Science-based training, FDA compliance, clinical protocols, patient communication, and peer network access.'
+              },
+              {
+                title: 'Premium Products',
+                desc: 'Third-party tested, peer-reviewed research, FDA Section 361 compliant, full ingredient disclosure.'
+              },
+              {
+                title: 'Ongoing Support',
+                desc: 'Peer network, clinical consultation, business guidance, protocol updates, community learning.'
+              }
+            ].map((pillar, idx) => (
+              <div key={idx} className="bg-blue-50 p-6 rounded-lg">
+                <h3 className="font-bold text-lg text-gray-900 mb-3">{pillar.title}</h3>
+                <p className="text-gray-600">{pillar.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <h4>What You Can Expect</h4>
-      <ul>
-        <li>Education + onboarding support</li>
-        <li>Protocol guidance and positioning</li>
-        <li>Practice growth enablement</li>
-        <li>Clear pathways: Regenerative • Aesthetic • Veterinary (Spring 2026)</li>
-      </ul>
-    </div>
-  </section>
-</div>
+      {/* Dr. Martin Partnership */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Learn from the Best</h2>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <h3 className="text-2xl font-bold text-blue-600 mb-4">Dr. Scott Martin Partnership</h3>
+            <p className="text-lg text-gray-700 mb-4">
+              We're proud to partner with Dr. Scott Martin, a leading voice in evidence-based regenerative medicine education.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Dr. Martin brings:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Extensive clinical experience with allogeneic biologics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Deep understanding of FDA regulatory compliance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Practical business acumen for practice integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Commitment to science over marketing hype</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Training library covers:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• The science behind Wharton's Jelly and exosomes</li>
+                  <li>• FDA Section 361 compliance explained</li>
+                  <li>• Moving beyond "stem cell" terminology</li>
+                  <li>• Building cash-pay biologic practices</li>
+                  <li>• Specialty-specific protocols</li>
+                  <li>• Revenue modeling and practice growth</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-blue-50 rounded-lg italic text-gray-700">
+              "My goal is simple: help providers understand the actual biology so they can confidently offer patients effective, compliant regenerative options while building sustainable practices. No hype, no shortcuts—just science and results."
+              <div className="mt-2 font-semibold">— Dr. Scott Martin</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- CONTACT -->
-<div id="contact" class="page">
-  <section class="page-hero">
-    <h1>Contact</h1>
-    <p>
-      Let’s talk through your goals and map the right pathway for your practice.
-    </p>
-    <div class="mini-cta">
-      <a onclick="showPage('home')" class="btn btn-secondary">Back to Overview</a>
-    </div>
-  </section>
+      {/* Our Commitment */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Commitment to You</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-green-600 mb-4">We Promise:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Honest, science-based education</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Regulatory compliance support</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Transparent products</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Responsive support</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Peer community access</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <span>Ongoing training</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-red-600 mb-4">We Will Never:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>✗ Make unsubstantiated claims</li>
+                <li>✗ Pressure you into purchases</li>
+                <li>✗ Leave you unsupported</li>
+                <li>✗ Promote non-compliant uses</li>
+                <li>✗ Hide behind vague marketing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <section class="section">
-    <div class="product-card">
-      <h3>Schedule a Consultation</h3>
-      <p class="product-subtitle">Regenerative • Aesthetic • Veterinary (Spring 2026)</p>
-      <p>
-        Email or call anytime. If you share your practice type and top priorities, we’ll come prepared with
-        recommendations and next steps.
-      </p>
+      {/* CTA */}
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Let's Start a Conversation
+          </h2>
+          <p className="text-xl mb-8 text-blue-100">
+            Whether you're just beginning to explore regenerative medicine or looking to transition from your current protocols, we're here to help.
+          </p>
+          <Link
+            href="/consultation"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Schedule Your Consultation
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
+      import { useState } from 'react';
+import Head from 'next/head';
+import { Check } from 'lucide-react';
 
-      <h4>Contact</h4>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a></li>
-        <li><strong>Phone:</strong> <a href="tel:864-381-0808">864-381-0808</a></li>
-      </ul>
-
-      <div style="margin-top: 1.4rem;">
-        <a href="mailto:maryanne@echelonwellnesssolutions.com?subject=Echelon%20Consultation%20Request" class="btn btn-primary">
-          Email to Schedule
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section">
-    <h2>We’ll Support You End-to-End</h2>
-    <p style="font-size:1.2rem; margin:1.1rem auto 2rem; max-width: 900px; color: rgba(255,255,255,0.92);">
-      Product education, protocols, team training, and implementation support—built for clinic reality.
-    </p>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Email</div>
-        <a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">📱</div>
-        <div style="font-size:1rem; color: rgba(255,255,255,0.85);">Phone</div>
-        <a href="tel:864-381-0808">864-381-0808</a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<footer>
-  <div class="footer-social">
-    <a href="#" title="Facebook">📘</a>
-    <a href="#" title="LinkedIn">💼</a>
-    <a href="#" title="Instagram">📷</a>
-  </div>
-  <div style="opacity:0.9;">© <span id="year"></span> Echelon Wellness Solutions • Supporting the Future of Wellness</div>
-</footer>
-
-<script>
-  function showPage(pageId){
-    // Toggle pages
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const page = document.getElementById(pageId);
-    if(page) page.classList.add('active');
-
-    // Toggle active nav link
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
-    const link = document.getElementById('link-' + pageId);
-    if(link) link.classList.add('active-link');
-
-    // Update hash + scroll
-    window.location.hash = pageId;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // On load: open hash if present
-  window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const initial = window.location.hash ? window.location.hash.replace('#','') : 'home';
-    showPage(initial);
+export default function Consultation() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    practiceName: '',
+    specialty: '',
+    interests: [],
+    patientVolume: '',
+    message: ''
   });
+  const [submitted, setSubmitted] = useState(false);
 
-  // Handle back/forward
-  window.addEventListener('hashchange', () => {
-    const pageId = window.location.hash.replace('#','') || 'home';
-    showPage(pageId);
-  });
-</script>
-</body>
-</html>
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData(prev => ({
+        ...prev,
+        interests: checked
+          ? [...prev.interests, value]
+          : prev.interests.filter(i => i !== value)
+      }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // In production, this would send to your backend/email service
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        practiceName: '',
+        specialty: '',
+        interests: [],
+        patientVolume: '',
+        message: ''
+      });
+      setSubmitted(false);
+    }, 3000);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Schedule a Consultation | Echelon Wellness Solutions</title>
+        <meta name="description" content="Schedule a free consultation to explore how regenerative medicine can transform your practice and increase revenue." />
+      </Head>
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready to Add Regenerative Medicine to Your Practice?
+          </h1>
+          <p className="text-xl text-gray-600">
+            Schedule a free, no-obligation consultation to explore how regenerative medicine can increase your revenue, improve patient outcomes, and position your practice as a leader in non-surgical treatment options.
+          </p>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Your Free Consultation: What We'll Cover
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            This is not a sales pitch—it's a strategic conversation about your practice, your goals, and whether regenerative medicine is the right fit for you.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Your Practice Assessment', items: ['Current patient population', 'Treatment modalities', 'Revenue goals'] },
+              { title: 'Regenerative Applications', items: ['Pain vs aesthetic options', 'Protocol recommendations', 'Real-world examples'] },
+              { title: 'Product Selection', items: ['Product overview', 'Matching to conditions', 'Peer-reviewed research'] },
+              { title: 'Financial Modeling', items: ['Revenue projections', 'Pricing strategies', 'ROI timeline'] },
+              { title: 'Regulatory Compliance', items: ['FDA Section 361', 'Proper language', 'Documentation'] },
+              { title: 'Implementation Plan', items: ['Training resources', 'Peer network access', 'Timeline to launch'] }
+            ].map((topic, idx) => (
+              <div key={idx} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="font-bold text-lg text-gray-900 mb-3">{topic.title}</h3>
+                <ul className="space-y-2">
+                  {topic.items.map((item, i) => (
+                    <li key={i} className="flex items-start text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+              Schedule Your Free Consultation Now
+            </h2>
+            
+            {submitted ? (
+              <div className="bg-green-50 border-2 border-green-500 rounded-lg p-8 text-center">
+                <Check className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                <p className="text-gray-700">
+                  We've received your consultation request. We'll contact you within 24 hours to schedule your call.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Contact Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Practice Name */}
+                <div>
+                  <label htmlFor="practiceName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Practice Name
+                  </label>
+                  <input
+                    type="text"
+                    id="practiceName"
+                    name="practiceName"
+                    value={formData.practiceName}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  />
+                </div>
+
+                {/* Specialty */}
+                <div>
+                  <label htmlFor="specialty" className="block text-sm font-medium text-gray-700 mb-2">
+                    Specialty/Profession *
+                  </label>
+                  <select
+                    id="specialty"
+                    name="specialty"
+                    required
+                    value={formData.specialty}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  >
+                    <option value="">Select your specialty</option>
+                    <option value="chiropractor">Chiropractor</option>
+                    <option value="podiatrist">Podiatrist</option>
+                    <option value="pain-management">Pain Management Physician</option>
+                    <option value="orthopedic">Orthopedic Surgeon</option>
+                    <option value="primary-care">Primary Care/Family Medicine</option>
+                    <option value="aesthetic">Aesthetic Provider (Med Spa, Plastic Surgery, Dermatology)</option>
+                    <option value="sports-medicine">Sports Medicine</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {/* Interests */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Primary Interest (select all that apply) *
+                  </label>
+                  <div className="space-y-2">
+                    {[
+                      { value: 'pain', label: 'Pain Management Applications' },
+                      { value: 'aesthetic', label: 'Aesthetic Applications' },
+                      { value: 'both', label: 'Both Pain and Aesthetic' },
+                      { value: 'pre-surgical', label: 'Pre-surgical Treatment Options' },
+                      { value: 'prp-alternative', label: 'Alternative to PRP/Steroids' }
+                    ].map((interest) => (
+                      <label key={interest.value} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          name="interests"
+                          value={interest.value}
+                          checked={formData.interests.includes(interest.value)}
+                          onChange={handleChange}
+                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">{interest.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Patient Volume */}
+                <div>
+                  <label htmlFor="patientVolume" className="block text-sm font-medium text-gray-700 mb-2">
+                    Current Monthly Patient Volume *
+                  </label>
+                  <select
+                    id="patientVolume"
+                    name="patientVolume"
+                    required
+                    value={formData.patientVolume}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  >
+                    <option value="">Select patient volume</option>
+                    <option value="less-100">Less than 100 patients/month</option>
+                    <option value="100-300">100-300 patients/month</option>
+                    <option value="300-500">300-500 patients/month</option>
+                    <option value="500-plus">500+ patients/month</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    What's your biggest challenge or question about regenerative medicine?
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    placeholder="Optional, but helps us prepare for our conversation..."
+                  ></textarea>
+                </div>
+
+                {/* Consent */}
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <label className="flex items-start">
+                    <input
+                      type="checkbox"
+                      required
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                    />
+                    <span className="ml-2 text-sm text-gray-700">
+                      I agree to receive email and phone communication from Echelon Wellness Solutions regarding my consultation and regenerative medicine information. I can unsubscribe at any time.
+                    </span>
+                  </label>
+                </div>
+
+                {/* Submit Button */}
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Schedule My Free Consultation
+                  </button>
+                </div>
+
+                <p className="text-center text-sm text-gray-600">
+                  Prefer to schedule by phone? Call us directly at{' '}
+                  <a href="tel:864-381-0808" className="text-blue-600 font-semibold hover:text-blue-700">
+                    864-381-0808
+                  </a>
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* What Happens Next */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            After You Submit This Form
+          </h2>
+          <div className="space-y-6">
+            {[
+              { step: '1', title: 'Confirmation', desc: 'You\'ll receive an immediate email confirmation with your consultation details.' },
+              { step: '2', title: 'Preparation', desc: 'We\'ll send you a brief pre-consultation questionnaire to help us understand your practice better.' },
+              { step: '3', title: 'Your Consultation', desc: 'We\'ll call you at your scheduled time for a comprehensive discussion about your practice and opportunities.' },
+              { step: '4', title: 'Custom Proposal', desc: 'If there\'s mutual interest, we\'ll create a customized implementation plan with specific products, protocols, and revenue projections.' },
+              { step: '5', title: 'Support & Training', desc: 'When you\'re ready to move forward, we provide comprehensive training, peer network access, and ongoing support.' }
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-start">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {item.step}
+                </div>
+                <div className="ml-4">
+                  <h3 className="font-bold text-lg text-gray-900 mb-1">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Common Questions Before Scheduling
+          </h2>
+          <div className="space-y-6">
+            {[
+              { q: 'Is there really no cost or obligation?', a: 'Absolutely none. This is a conversation to see if regenerative medicine makes sense for your practice. If it\'s not a fit, we\'ll tell you honestly.' },
+              { q: 'How long is the consultation?', a: 'Typically 30-45 minutes, depending on your questions and practice complexity.' },
+              { q: 'Will I be pressured to buy products?', a: 'No. Our goal is to educate and help you make an informed decision. Many providers take weeks or months after the initial call to implement.' },
+              { q: 'What if I\'m brand new to regenerative medicine?', a: 'Perfect. We\'ll start with the basics and build from there. No prior knowledge needed.' },
+              { q: 'Can I bring my business partner or practice manager?', a: 'Absolutely. The more key decision-makers involved, the better.' }
+            ].map((faq, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{faq.q}</h3>
+                <p className="text-gray-600">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+      

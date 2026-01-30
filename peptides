@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US-Sourced Peptides | Echelon Wellness Solutions</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #2c5f7d 0%, #1a4259 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .section-header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+        .section-header .tagline {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        .intro-statement {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2c5f7d;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .feature-card h3 {
+            color: #2c5f7d;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .feature-card p {
+            margin: 0;
+            color: #555;
+        }
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .target-audience {
+            background: #f0f7fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .target-audience h2 {
+            color: #2c5f7d;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .target-audience p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .target-audience ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        .target-audience li {
+            padding-left: 25px;
+            position: relative;
+        }
+        .target-audience li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2c5f7d;
+            font-weight: bold;
+        }
+        .differentiator-box {
+            background: linear-gradient(135deg, #1a4259 0%, #2c5f7d 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .differentiator-box h2 {
+            margin-top: 0;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .differentiator-box p {
+            font-size: 1.2em;
+            margin: 0;
+            line-height: 1.7;
+        }
+        .quality-standards {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .quality-standards h2 {
+            color: #2c5f7d;
+            margin-top: 0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .standard-item {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+        }
+        .standard-item .icon {
+            color: #2c5f7d;
+        }
+        .standard-item h4 {
+            margin: 10px 0 5px 0;
+            color: #2c5f7d;
+        }
+        .standard-item p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2em;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section-header">
+        <h1>🧬 US-Sourced Therapeutic Peptides</h1>
+        <div class="tagline">Premium Quality. Complete Transparency. American Manufacturing Excellence.</div>
+    </div>
+
+    <div class="intro-statement">
+        Premium therapeutic peptides sourced, manufactured, and tested exclusively in the United States. Complete supply chain transparency for healthcare providers who demand quality assurance and regulatory compliance.
+    </div>
+
+    <div class="differentiator-box">
+        <h2>Why US-Sourced Matters</h2>
+        <p>Eliminate the uncertainty and risk of overseas peptide sourcing. Know exactly where your therapeutic products come from, how they're manufactured, and that they meet the highest American quality standards—without concern about foreign contamination or inconsistent quality control.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">🇺🇸</div>
+            <h3>100% US Sourcing & Manufacturing</h3>
+            <p>Complete traceability from synthesis to delivery. Every peptide is sourced and manufactured within the United States using domestic materials and facilities.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🔬</div>
+            <h3>Third-Party Testing</h3>
+            <p>Certificate of Analysis (COA) provided with every batch. Independent laboratory verification ensures purity, potency, and safety standards are consistently met.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">✅</div>
+            <h3>cGMP Compliant Facilities</h3>
+            <p>Manufactured in FDA-registered facilities following current Good Manufacturing Practices. Rigorous quality control at every stage of production.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h3>No Overseas Supply Chain Risk</h3>
+            <p>Eliminate concerns about foreign contamination, quality inconsistencies, or unreliable international shipping. Domestic production ensures reliability and peace of mind.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🤝</div>
+            <h3>B2B Healthcare Focus</h3>
+            <p>Direct support for clinics, med spas, wellness centers, and healthcare practices. Dedicated account management and clinical protocol guidance.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">📋</div>
+            <h3>Regulatory Compliance Support</h3>
+            <p>Documentation and compliance assistance to help your practice meet regulatory requirements. Full transparency in sourcing and manufacturing processes.</p>
+        </div>
+    </div>
+
+    <div class="quality-standards">
+        <h2>Our Quality Standards</h2>
+        <div class="standards-grid">
+            <div class="standard-item">
+                <div class="icon">🏭</div>
+                <h4>FDA-Registered</h4>
+                <p>Manufacturing facilities</p>
+            </div>
+            <div class="standard-item">
+                <div class="icon">📊</div>
+                <h4>Batch Testing</h4>
+                <p>Every production run verified</p>
+            </div>
+            <div class="standard-item">
+                <div class="icon">🔍</div>
+                <h4>Purity Analysis</h4>
+                <p>HPLC verification ≥98%</p>
+            </div>
+            <div class="standard-item">
+                <div class="icon">🧪</div>
+                <h4>Sterility Testing</h4>
+                <p>Endotoxin & bioburden screening</p>
+            </div>
+            <div class="standard-item">
+                <div class="icon">📦</div>
+                <h4>Proper Storage</h4>
+                <p>Temperature-controlled logistics</p>
+            </div>
+            <div class="standard-item">
+                <div class="icon">📄</div>
+                <h4>Full Documentation</h4>
+                <p>COA with every order</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="target-audience">
+        <h2>Designed for Healthcare Providers</h2>
+        <p>Trusted by healthcare professionals who demand reliable peptide therapeutics without the uncertainty of international sourcing:</p>
+        <ul>
+            <li>Wellness Clinics & Integrative Medicine</li>
+            <li>Medical Spas & Aesthetic Practices</li>
+            <li>Anti-Aging & Longevity Centers</li>
+            <li>Sports Medicine & Performance Optimization</li>
+            <li>Functional Medicine Practitioners</li>
+            <li>Compounding Pharmacies</li>
+            <li>Pain Management Specialists</li>
+            <li>Regenerative Medicine Practices</li>
+        </ul>
+    </div>
+
+    <div class="intro-statement" style="border-left-color: #1a4259; background: #f0f7fa;">
+        <strong>The Echelon Difference:</strong> Just as we provide complete transparency in our biologic donor screening and tissue processing, our peptide sourcing follows the same rigorous standards. You deserve to know exactly what you're offering your patients—and we ensure you can stand behind every product with confidence.
+    </div>
+
+</body>
+</html>

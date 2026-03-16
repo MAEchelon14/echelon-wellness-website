@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth Circle Membership | Echelon Wellness Solutions</title>
+<meta name="description" content="The Echelon Growth Circle is a monthly membership delivering done-for-you marketing tools, client acquisition systems, and B2B access to regenerative products. Starting at $97/month.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B2A;--navy-mid:#132236;--navy-light:#1C3050;--gold:#C9A84C;--gold-light:#E4C878;--white:#FFFFFF;--off-white:#F8F5EE;--text-muted:#8A9BB0;--border:rgba(201,168,76,0.2);--border-subtle:rgba(201,168,76,0.1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:drift 20s ease-in-out infinite;}
+.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 70%);top:-200px;right:-200px;}
+.orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(28,48,80,0.5) 0%,transparent 70%);bottom:200px;left:-100px;animation-delay:-8s;}
+@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-15px);}}
+.container{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,0.4);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{text-decoration:none;}
+.nav-logo-main{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);line-height:1;}
+.nav-logo-sub{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-link{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--text-muted);padding:8px 16px;border-radius:2px;text-decoration:none;transition:color 0.2s;}
+.nav-link:hover{color:var(--white);}.nav-link.active{color:var(--gold);}
+.nav-cta{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--navy);background:linear-gradient(135deg,var(--gold),var(--gold-light));padding:10px 22px;border-radius:2px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,168,76,0.35);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1px;background:var(--white);}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--navy-mid);border-bottom:1px solid var(--border);z-index:99;padding:24px;flex-direction:column;gap:4px;}
+.mobile-menu.open{display:flex;}
+.mobile-link{font-size:14px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;color:var(--text-muted);padding:14px 0;border-bottom:1px solid var(--border-subtle);text-decoration:none;display:block;transition:color 0.2s;}
+.mobile-link:hover{color:var(--gold);}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gold);opacity:0.5;}
+.section-label{text-align:center;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,50px);font-weight:600;text-align:center;color:var(--white);margin-bottom:56px;line-height:1.1;}
+.section-title em{font-style:italic;color:var(--gold-light);}
+.cta-btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;border-radius:2px;padding:18px 48px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 8px 32px rgba(201,168,76,0.2);}
+.cta-btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,0.4);}
+.cta-btn-outline{display:inline-block;background:transparent;color:var(--gold);border:1px solid var(--gold);border-radius:2px;padding:17px 40px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.cta-btn-outline:hover{background:rgba(201,168,76,0.1);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}.reveal.visible{opacity:1;transform:translateY(0);}
+.page-hero{padding:140px 0 80px;text-align:center;animation:fadeUp 0.8s ease both;}
+.page-hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5.5vw,62px);font-weight:600;line-height:1.05;color:var(--white);margin-bottom:20px;}
+.page-hero-headline em{font-style:italic;color:var(--gold-light);}
+.page-hero-sub{font-size:16px;color:var(--text-muted);max-width:580px;margin:0 auto;line-height:1.7;}
+.gc-promise{padding:80px 0;border-top:1px solid var(--border);}
+.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;max-width:900px;margin:0 auto;}
+.promise-col{background:var(--navy-mid);padding:40px;}
+.promise-col-label{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;font-weight:600;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border-subtle);}
+.promise-col-label.without{color:var(--text-muted);}.promise-col-label.with{color:var(--gold);}
+.promise-items{display:flex;flex-direction:column;gap:14px;}
+.promise-item{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5;}
+.promise-item.without{color:var(--text-muted);}.promise-item.with{color:var(--off-white);}
+.promise-item::before{flex-shrink:0;margin-top:1px;}
+.promise-item.without::before{content:'—';color:rgba(138,155,176,0.4);}
+.promise-item.with::before{content:'◆';color:var(--gold);font-size:9px;margin-top:4px;}
+.gc-tiers{padding:80px 0;border-top:1px solid var(--border);}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+.tier-card{background:var(--navy-mid);padding:40px 36px;position:relative;transition:background 0.3s;}
+.tier-card:hover{background:var(--navy-light);}
+.tier-card.featured{background:var(--navy-light);}
+.tier-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+.tier-popular{position:absolute;top:20px;right:20px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:4px 10px;border-radius:1px;font-weight:700;}
+.tier-name{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.tier-price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--white);line-height:1;margin-bottom:4px;}
+.tier-price span{font-size:18px;vertical-align:super;font-weight:400;color:var(--text-muted);}
+.tier-period{font-size:12px;color:var(--text-muted);margin-bottom:8px;}
+.tier-best-for{font-size:12px;color:var(--gold);font-style:italic;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border-subtle);line-height:1.5;}
+.tier-features{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.tier-feature{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--off-white);line-height:1.5;}
+.tier-feature::before{content:'◆';color:var(--gold);font-size:8px;margin-top:4px;flex-shrink:0;}
+.tier-feature.dim{color:var(--text-muted);}.tier-feature.dim::before{color:rgba(201,168,76,0.3);}
+.tier-cta{width:100%;padding:14px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all 0.2s;display:block;text-align:center;text-decoration:none;}
+.tier-cta.gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;}
+.tier-cta.gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.35);}
+.tier-cta.outline{background:transparent;color:var(--gold);border:1px solid var(--border);}
+.tier-cta.outline:hover{background:rgba(201,168,76,0.08);}
+.gc-comparison{padding:80px 0;border-top:1px solid var(--border);}
+.comparison-table{width:100%;border-collapse:collapse;max-width:900px;margin:0 auto;}
+.comparison-table thead th{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);font-weight:500;padding:16px 20px;text-align:center;border-bottom:1px solid var(--border);}
+.comparison-table thead th:first-child{text-align:left;color:var(--gold);}
+.comparison-table tbody tr{border-bottom:1px solid var(--border-subtle);transition:background 0.2s;}
+.comparison-table tbody tr:hover{background:rgba(201,168,76,0.02);}
+.comparison-table td{padding:16px 20px;font-size:13px;color:var(--text-muted);text-align:center;}
+.comparison-table td:first-child{text-align:left;color:var(--off-white);}
+.check{color:var(--gold);font-size:16px;}.dash{color:rgba(138,155,176,0.3);}.partial{font-size:11px;color:var(--gold);}
+.gc-projections{padding:80px 0;border-top:1px solid var(--border);}
+.proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;max-width:900px;margin:0 auto;}
+.proj-card{background:var(--navy-mid);padding:32px 24px;text-align:center;transition:background 0.3s;}
+.proj-card:hover{background:var(--navy-light);}
+.proj-months{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;}
+.proj-revenue{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.proj-members{font-size:11px;color:var(--text-muted);}
+.gc-funnel{padding:80px 0;border-top:1px solid var(--border);}
+.funnel-steps{max-width:480px;margin:0 auto;display:flex;flex-direction:column;}
+.funnel-step{background:var(--navy-mid);border:1px solid var(--border-subtle);border-radius:3px;padding:24px 28px;text-align:center;}
+.funnel-step-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;}
+.funnel-step-text{font-size:14px;color:var(--off-white);}
+.funnel-arrow{text-align:center;padding:6px 0;color:var(--gold);font-size:18px;opacity:0.6;}
+.funnel-step.highlight{background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.06));border-color:var(--gold);}
+.gc-final{padding:100px 0;text-align:center;border-top:1px solid var(--border);position:relative;}
+.gc-final::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);}
+footer{padding:60px 0 40px;border-top:1px solid var(--border);}
+.footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:0.1em;color:var(--gold);margin-bottom:8px;}
+.footer-brand-sub{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;}
+.footer-tagline{font-size:13px;color:var(--text-muted);line-height:1.7;}
+.footer-nav-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links li a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
+.footer-links li a:hover{color:var(--gold);}
+.footer-contact-item{font-size:13px;color:var(--text-muted);margin-bottom:8px;}
+.footer-contact-item a{color:var(--text-muted);text-decoration:none;transition:color 0.2s;}
+.footer-contact-item a:hover{color:var(--gold);}
+.footer-bottom{padding-top:32px;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(138,155,176,0.5);}.footer-legal{font-size:11px;color:rgba(138,155,176,0.4);}
+@media(max-width:900px){.tiers-grid{grid-template-columns:1fr;}.promise-grid{grid-template-columns:1fr;}.proj-grid{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.nav-links{display:none;}.hamburger{display:flex;}.footer-inner{grid-template-columns:1fr;gap:32px;}}
+</style>
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <div class="nav-logo-main">Echelon</div>
+      <div class="nav-logo-sub">Wellness Solutions</div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="products.html">Products</a>
+      <a class="nav-link active" href="growth-circle.html">Growth Circle</a>
+      <a class="nav-cta" href="free-guide.html">Get Free Guide →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a class="mobile-link" href="index.html">Home</a>
+  <a class="mobile-link" href="products.html">Products</a>
+  <a class="mobile-link" href="growth-circle.html">Growth Circle</a>
+  <a class="mobile-link" href="free-guide.html" style="color:var(--gold)">Get Free Guide →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;">Echelon Growth Circle</div>
+    <h1 class="page-hero-headline">The complete B2B growth system<br><em>for wellness businesses.</em></h1>
+    <p class="page-hero-sub">Regenerative products + Revenue growth training + Marketing mastery. Everything you need to build a thriving wellness practice, delivered monthly.</p>
+    <div style="margin-top:40px;"><a class="cta-btn-gold" href="#tiers">View Membership Tiers →</a></div>
+  </div>
+</section>
+
+<section class="gc-promise">
+  <div class="container">
+    <div class="section-label reveal">The Transformation</div>
+    <div class="section-title reveal">Without vs. <em>with</em> Echelon Growth Circle</div>
+    <div class="promise-grid reveal">
+      <div class="promise-col">
+        <div class="promise-col-label without">Without Echelon Growth Circle</div>
+        <div class="promise-items">
+          <div class="promise-item without">Struggling to find new clients consistently</div>
+          <div class="promise-item without">No system for content or social media</div>
+          <div class="promise-item without">Missing high-margin revenue streams</div>
+          <div class="promise-item without">Generic marketing advice that doesn't fit wellness</div>
+          <div class="promise-item without">Paying too much for one-off consulting</div>
+          <div class="promise-item without">No access to quality B2B regenerative products</div>
+        </div>
+      </div>
+      <div class="promise-col">
+        <div class="promise-col-label with">With Echelon Growth Circle</div>
+        <div class="promise-items">
+          <div class="promise-item with">Monthly outreach scripts that fill your pipeline</div>
+          <div class="promise-item with">Done-for-you content calendar every month</div>
+          <div class="promise-item with">Access to peptides, stem cells &amp; regenerative products</div>
+          <div class="promise-item with">Wellness industry-specific sales &amp; marketing tools</div>
+          <div class="promise-item with">Ongoing expert access from $97 to $397/mo</div>
+          <div class="promise-item with">Wholesale B2B pricing on Echelon's full product suite</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gc-tiers" id="tiers">
+  <div class="container">
+    <div class="section-label reveal">Membership Tiers</div>
+    <div class="section-title reveal">Three tiers. <em>One mission: grow your business.</em></div>
+    <div class="tiers-grid reveal">
+      <div class="tier-card">
+        <div class="tier-name">Echelon Starter</div>
+        <div class="tier-price"><span>$</span>97</div>
+        <div class="tier-period">per month · no contracts</div>
+        <div class="tier-best-for">Best for: Wellness business owners new to structured marketing who want a proven foundation.</div>
+        <div class="tier-features">
+          <div class="tier-feature">Monthly Client Attraction Kit: outreach scripts, DM templates, email sequences</div>
+          <div class="tier-feature">30-Day Content Calendar: post ideas and captions for LinkedIn, Facebook, Instagram</div>
+          <div class="tier-feature">Product Integration Guide: how to introduce peptides and regenerative products</div>
+          <div class="tier-feature">Private Echelon Growth Circle community access</div>
+          <div class="tier-feature">Library of past kits and training resources</div>
+          <div class="tier-feature dim">Group coaching calls (Growth tier and above)</div>
+          <div class="tier-feature dim">1-on-1 strategy sessions (Elite tier)</div>
+        </div>
+        <a class="tier-cta outline" href="free-guide.html">Start with Free Guide →</a>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-popular">Most Popular</div>
+        <div class="tier-name">Echelon Growth</div>
+        <div class="tier-price"><span>$</span>197</div>
+        <div class="tier-period">per month · no contracts</div>
+        <div class="tier-best-for">Best for: Wellness business owners ready to accelerate with consistent growth systems and high-margin product revenue.</div>
+        <div class="tier-features">
+          <div class="tier-feature">Everything in Starter, PLUS:</div>
+          <div class="tier-feature">Monthly Group Coaching Call: live Q&amp;A and strategy hot seats with Echelon founder</div>
+          <div class="tier-feature">Done-for-you Facebook &amp; Instagram Ad Templates, ready to run each month</div>
+          <div class="tier-feature">Full Revenue Growth Training Module: new topic each month</div>
+          <div class="tier-feature">5% discount on all Echelon wholesale product orders</div>
+          <div class="tier-feature">Swipe file vault: best-performing emails, ads, and scripts from the community</div>
+          <div class="tier-feature dim">Monthly 1-on-1 strategy session (Elite tier)</div>
+        </div>
+        <a class="tier-cta gold" href="mailto:maryanne@echelonwellnesssolutions.com">Join Growth Circle →</a>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Echelon Elite</div>
+        <div class="tier-price"><span>$</span>397</div>
+        <div class="tier-period">per month · no contracts</div>
+        <div class="tier-best-for">Best for: Established wellness business owners who want a true strategic partner with a tailored growth plan.</div>
+        <div class="tier-features">
+          <div class="tier-feature">Everything in Growth, PLUS:</div>
+          <div class="tier-feature">Monthly 1-on-1 Strategy Session (60 min) with Echelon founder</div>
+          <div class="tier-feature">10% discount on all Echelon wholesale product orders</div>
+          <div class="tier-feature">Priority email &amp; messaging support (48-hr response guarantee)</div>
+          <div class="tier-feature">Custom content review: submit posts and ads for personal feedback</div>
+          <div class="tier-feature">Early access to new products, partnerships, and beta programs</div>
+          <div class="tier-feature">VIP recognition and featured case study opportunity</div>
+        </div>
+        <a class="tier-cta outline" href="mailto:maryanne@echelonwellnesssolutions.com">Apply for Elite →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gc-comparison">
+  <div class="container">
+    <div class="section-label reveal">Feature Comparison</div>
+    <div class="section-title reveal" style="font-size:clamp(24px,3.5vw,40px);">Everything you get, <em>side by side.</em></div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="comparison-table">
+        <thead><tr><th>Feature</th><th>Starter · $97</th><th>Growth · $197</th><th>Elite · $397</th></tr></thead>
+        <tbody>
+          <tr><td>Monthly Content Kit</td><td><span class="check">◆</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Client Outreach Scripts</td><td><span class="check">◆</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Product Integration Guides</td><td><span class="check">◆</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Private Community Access</td><td><span class="check">◆</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Revenue Growth Training</td><td><span class="partial">Basic</span></td><td><span class="check">Full</span></td><td><span class="check">Full</span></td></tr>
+          <tr><td>Monthly Group Coaching Call</td><td><span class="dash">—</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Done-for-You Ad Templates</td><td><span class="dash">—</span></td><td><span class="check">◆</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Product Wholesale Discount</td><td><span class="partial">Standard</span></td><td><span class="partial">5% off</span></td><td><span class="partial">10% off</span></td></tr>
+          <tr><td>Monthly 1-on-1 Strategy Session</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">60 min</span></td></tr>
+          <tr><td>Priority Support (48-hr)</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">◆</span></td></tr>
+          <tr><td>Custom Content Review</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">◆</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="gc-projections">
+  <div class="container">
+    <div class="section-label reveal">Revenue Projections</div>
+    <div class="section-title reveal">What this looks like <em>at scale.</em></div>
+    <div class="proj-grid reveal">
+      <div class="proj-card"><div class="proj-months">Months 1–2</div><div class="proj-revenue">$1K–$2.5K</div><div class="proj-members">10–25 members<br><span style="font-size:10px;color:rgba(138,155,176,0.6);">Organic LinkedIn + FB Groups</span></div></div>
+      <div class="proj-card"><div class="proj-months">Months 3–4</div><div class="proj-revenue">$2.5K–$6K</div><div class="proj-members">25–60 members<br><span style="font-size:10px;color:rgba(138,155,176,0.6);">Organic + $300/mo ads</span></div></div>
+      <div class="proj-card"><div class="proj-months">Months 5–6</div><div class="proj-revenue">$6K–$12K</div><div class="proj-members">60–120 members<br><span style="font-size:10px;color:rgba(138,155,176,0.6);">Organic + $500/mo ads</span></div></div>
+      <div class="proj-card"><div class="proj-months">Months 7–12</div><div class="proj-revenue">$12K–$30K</div><div class="proj-members">120–300 members<br><span style="font-size:10px;color:rgba(138,155,176,0.6);">Scaled ads + referrals</span></div></div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:20px;" class="reveal">Projections based on blended avg. revenue of ~$147/mo per member. Product upsell revenue (peptides, stem cells, Wharton's Jelly) not included. Adds an estimated $2K–$15K/mo additional.</p>
+  </div>
+</section>
+
+<section class="gc-funnel">
+  <div class="container">
+    <div class="section-label reveal">The Marketing Funnel</div>
+    <div class="section-title reveal">Your path to <em>consistent members.</em></div>
+    <div class="funnel-steps reveal">
+      <div class="funnel-step"><div class="funnel-step-label">Step 1: Awareness</div><div class="funnel-step-text">LinkedIn post or Facebook Group comment builds authority with wellness business owners</div></div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step"><div class="funnel-step-label">Step 2: Lead Magnet</div><div class="funnel-step-text">Free guide opt-in captures email: "The 3 Revenue Streams Every Wellness Clinic Should Add in 2026"</div></div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step"><div class="funnel-step-label">Step 3: Nurture</div><div class="funnel-step-text">7-day email sequence builds trust, delivers value, and presents the Growth Circle offer</div></div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step highlight"><div class="funnel-step-label">Step 4: Conversion</div><div class="funnel-step-text">Wellness business owner joins Echelon Growth Circle at Starter, Growth, or Elite tier</div></div>
+      <div class="funnel-arrow">↓</div>
+      <div class="funnel-step" style="border-color:var(--gold);background:rgba(201,168,76,0.06);"><div class="funnel-step-label" style="color:var(--gold-light);">Step 5: Upsell</div><div class="funnel-step-text" style="color:var(--off-white);">Member begins ordering peptides, stem cells &amp; Wharton's Jelly at wholesale pricing, adding $2K–$15K/mo in additional product revenue</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gc-final" id="gc-contact">
+  <div class="container">
+    <div class="section-label reveal">Ready to Grow?</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,52px);font-weight:600;color:var(--white);margin-bottom:16px;line-height:1.1;" class="reveal">Start with the free guide.<br><em>Take the next step when you're ready.</em></h2>
+    <p style="font-size:15px;color:var(--text-muted);margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;" class="reveal">Download the free revenue guide to see exactly how the Growth Circle works. Join when you're ready. No pressure, no contracts, cancel anytime. Founding members are grandfathered into current pricing permanently.</p>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;" class="reveal">
+      <a class="cta-btn-gold" href="free-guide.html">Download Free Guide →</a>
+      <a class="cta-btn-outline" href="mailto:maryanne@echelonwellnesssolutions.com">Talk to Mary Anne →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-brand">Echelon</div><div class="footer-brand-sub">Wellness Solutions</div><p class="footer-tagline">Helping wellness business owners grow their revenue, their reach, and their impact. Premier manufacturer representative for Platinum Biologics.</p></div>
+      <div><div class="footer-nav-label">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="growth-circle.html">Growth Circle</a></li><li><a href="free-guide.html">Free Revenue Guide</a></li></ul></div>
+      <div><div class="footer-nav-label">Contact</div><div class="footer-contact-item"><a href="mailto:maryanne@echelonwellnesssolutions.com">maryanne@echelonwellnesssolutions.com</a></div><div class="footer-contact-item"><a href="tel:8643810808">864-381-0808</a></div><div style="margin-top:20px;"><div class="footer-nav-label">Partner</div><div style="font-size:13px;color:var(--text-muted);">Platinum Biologics</div></div></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2026 Echelon Wellness Solutions. All rights reserved.</div><div class="footer-legal">All products FDA Section 361 compliant. For licensed healthcare providers.</div></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>40));
+function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);observer.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

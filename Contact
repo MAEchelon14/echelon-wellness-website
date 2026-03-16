@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule a Call | Echelon Wellness Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1929;
+    --navy-mid: #122338;
+    --navy-light: #1C3550;
+    --gold: #C9A84C;
+    --gold-light: #E2C27D;
+    --gold-pale: #F5EDD8;
+    --cream: #FAF7F2;
+    --text-dark: #0B1929;
+    --text-muted: #5A7080;
+    --border: rgba(201,168,76,0.2);
+    --white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 5rem 2.5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.35rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.1rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.8rem auto 0;
+    opacity: 0.6;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 4rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* LEFT: CONTACT FORM */
+  .form-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+  .form-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .form-card .subhead {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--navy);
+    background: var(--cream);
+    border: 1px solid rgba(11,25,41,0.15);
+    border-radius: 3px;
+    padding: 0.7rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--navy);
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-submit:hover {
+    background: var(--navy-light);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  /* RIGHT PANEL */
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* SCHEDULE CARD */
+  .schedule-card {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 2.2rem 2rem;
+    color: var(--white);
+  }
+  .schedule-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+  .schedule-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.6rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .btn-schedule {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    transition: background 0.2s;
+  }
+  .btn-schedule:hover { background: var(--gold-light); }
+
+  .schedule-bullets {
+    list-style: none;
+    margin-bottom: 1.6rem;
+  }
+  .schedule-bullets li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    padding: 0.45rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-weight: 300;
+  }
+  .schedule-bullets li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 0.42em;
+    flex-shrink: 0;
+  }
+
+  /* CONTACT DIRECT */
+  .direct-card {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 4px;
+    padding: 1.8rem 2rem;
+  }
+  .direct-card h3 {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(11,25,41,0.07);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gold-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+  .contact-value {
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .contact-value:hover { color: var(--gold); }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    background: var(--navy-mid);
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+  .trust-strip p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+  }
+  .trust-strip strong { color: rgba(255,255,255,0.7); font-weight: 400; }
+
+  /* SUCCESS STATE */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .success-msg .check {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--gold-pale);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .success-msg .check svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .success-msg h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .success-msg p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .main { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 3.5rem 1.25rem 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* SUBTLE ENTRANCE */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero { animation: fadeUp 0.6s ease both; }
+  .form-card { animation: fadeUp 0.6s 0.15s ease both; }
+  .right-panel { animation: fadeUp 0.6s 0.25s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Echelon Wellness Solutions</a>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Growth Circle</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Let's Connect</div>
+  <h1>Ready to Grow Your Practice with <em>Regenerative Medicine?</em></h1>
+  <p>Schedule a no-pressure discovery call or send a message. We'll discuss your practice's goals and show you exactly how our products fit.</p>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- MAIN GRID -->
+<main class="main">
+
+  <!-- LEFT: CONTACT FORM -->
+  <div class="form-card">
+    <h2>Send a Message</h2>
+    <p class="subhead">Prefer to reach out on your schedule? Fill out the form and Mary Anne will respond within one business day.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Dr. Sarah" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Mitchell" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@yourpractice.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+      </div>
+
+      <div class="form-group">
+        <label for="practiceType">Practice Type</label>
+        <select id="practiceType" name="practiceType">
+          <option value="" disabled selected>Select your specialty</option>
+          <option>Orthopedic Surgery</option>
+          <option>Chiropractic</option>
+          <option>Pain Management</option>
+          <option>Aesthetic / Med Spa</option>
+          <option>Podiatry</option>
+          <option>Functional Medicine</option>
+          <option>Primary Care</option>
+          <option>Veterinary</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">What are you looking to achieve?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your practice and what products or services interest you most..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message &rarr;</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div class="check">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>Message Received</h3>
+      <p>Thank you for reaching out. Mary Anne will be in touch within one business day.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- SCHEDULE CARD -->
+    <div class="schedule-card">
+      <h2>Book a Discovery Call</h2>
+      <p>A focused 20-minute conversation to explore how regenerative medicine products can fit your practice — no sales pressure, just real answers.</p>
+
+      <ul class="schedule-bullets">
+        <li>Learn which products are the best fit for your patient population</li>
+        <li>Understand FDA 361 compliance and what it means for your practice</li>
+        <li>Get wholesale pricing and onboarding details</li>
+        <li>Ask anything — clinical questions welcome</li>
+      </ul>
+
+      <!-- Replace href with your Calendly or booking link -->
+      <a href="https://calendly.com/YOUR-LINK" target="_blank" class="btn-schedule">Choose a Time &rarr;</a>
+    </div>
+
+    <!-- DIRECT CONTACT -->
+    <div class="direct-card">
+      <h3>Reach Out Directly</h3>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .92h3a2 2 0 012 1.72c.13 1 .39 1.98.73 2.92a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.94.34 1.92.6 2.92.73A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Phone</span>
+          <a href="tel:8643810808" class="contact-value">864-381-0808</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Email</span>
+          <a href="mailto:maryanne@echelonwellnesssolutions.com" class="contact-value">maryanne@echelonwellnesssolutions.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <span class="contact-label">Response Time</span>
+          <span class="contact-value">Within 1 business day</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <p><strong>FDA Section 361 Compliant Products</strong> &nbsp;·&nbsp; Platinum Biologics &amp; EverCelle &nbsp;·&nbsp; Peer-Reviewed Research &nbsp;·&nbsp; US-Sourced Supply Chain</p>
+</div>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
